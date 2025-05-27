@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="d8e4fc24c37522109d5afeac050131c4" extends="cmdb_ci_computer" label="my asset inventory" max_length="40" name="x_1770592_easy_t_0_my_asset_inventory" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" default="yes" label="Availalble" max_length="40" name="availalble" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Yes" sequence="0" value="yes"/>
+                <element inactive_on_update="false" label="No" sequence="1" value="no"/>
+            </choice>
+        </element>
+        <element label="Assigner" max_length="32" name="assigner" reference="sys_user" type="reference"/>
+    </element>
+</database>

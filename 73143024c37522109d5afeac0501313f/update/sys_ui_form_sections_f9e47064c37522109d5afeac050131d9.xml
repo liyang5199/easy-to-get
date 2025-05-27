@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="f9e47064c37522109d5afeac050131d9" sys_domain="global" table="x_1770592_easy_t_0_my_asset_inventory" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:58</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c2e4b064c37522109d5afeac05013110</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1770592_easy_t_0_my_asset_inventory" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="169d5a872300001009d5110d96bf6537">f9e47064c37522109d5afeac050131d9</sys_ui_form>
+            <sys_ui_section caption="Key Attributes" display_value="Key Attributes" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="169d5a872300001009d5110d96bf6537">4ae47064c37522109d5afeac050131fb</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:58</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:58</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>46e47064c37522109d5afeac050131fb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1770592_easy_t_0_my_asset_inventory" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="169d5a872300001009d5110d96bf6537">f9e47064c37522109d5afeac050131d9</sys_ui_form>
+            <sys_ui_section caption="More Attributes" display_value="More Attributes" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="169d5a872300001009d5110d96bf6537">35e47064c37522109d5afeac050131dc</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:58</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_1770592_easy_t_0_my_asset_inventory</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:58</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f9e47064c37522109d5afeac050131d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1770592_easy_t_0_my_asset_inventory</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+            <sys_update_name>sys_ui_form_sections_f9e47064c37522109d5afeac050131d9</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:58</sys_updated_on>
+            <sys_user/>
+            <view display_value="CMDB Agent Workspace" name="cmdb_workspace">169d5a872300001009d5110d96bf6537</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

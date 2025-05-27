@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="Configuration" section_id="69e47064c37522109d5afeac0501313b" sys_domain="global" table="x_1770592_easy_t_0_my_asset_inventory" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>ede47064c37522109d5afeac05013141</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>os_domain</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>e9e47064c37522109d5afeac0501313c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>os</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>e9e47064c37522109d5afeac0501313f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>os_version</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>e5e47064c37522109d5afeac0501313d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>os_service_pack</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>e5e47064c37522109d5afeac05013140</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>dns_domain</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>e1e47064c37522109d5afeac0501313e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>disk_space</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>e1e47064c37522109d5afeac05013141</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>ede47064c37522109d5afeac0501313e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>ram</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>65e47064c37522109d5afeac05013142</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpu_manufacturer</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>61e47064c37522109d5afeac0501313d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpu_type</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>61e47064c37522109d5afeac05013140</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpu_speed</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>6de47064c37522109d5afeac0501313d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpu_count</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>6de47064c37522109d5afeac05013140</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpu_core_count</element>
+            <position>13</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>69e47064c37522109d5afeac0501313e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>14</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>69e47064c37522109d5afeac05013141</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>short_description</element>
+            <position>15</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>65e47064c37522109d5afeac0501313f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>ui_ng_relation_formatter.xml</element>
+            <position>16</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_id>e9e47064c37522109d5afeac05013142</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter display_value="CI Relations">b62309137f32310009fedf92bdfa912b</sys_ui_formatter>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <type>formatter</type>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>Configuration</caption>
+            <header>false</header>
+            <name>x_1770592_easy_t_0_my_asset_inventory</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>69e47064c37522109d5afeac0501313b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1770592_easy_t_0_my_asset_inventory</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+            <sys_update_name>sys_ui_section_69e47064c37522109d5afeac0501313b</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sys_ui_section_69e47064c37522109d5afeac0501313b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="Configuration" section_id="69e47064c37522109d5afeac0501313b" sys_domain="global" table="x_1770592_easy_t_0_my_asset_inventory" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>.begin_split</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>ede47064c37522109d5afeac05013141</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type>.begin_split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>os_domain</element><position>1</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>e9e47064c37522109d5afeac0501313c</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>os</element><position>2</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>e9e47064c37522109d5afeac0501313f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>os_version</element><position>3</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>e5e47064c37522109d5afeac0501313d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>os_service_pack</element><position>4</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>e5e47064c37522109d5afeac05013140</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>dns_domain</element><position>5</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>e1e47064c37522109d5afeac0501313e</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>disk_space</element><position>6</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>e1e47064c37522109d5afeac05013141</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>7</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>ede47064c37522109d5afeac0501313e</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>ram</element><position>8</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>65e47064c37522109d5afeac05013142</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>cpu_manufacturer</element><position>9</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>61e47064c37522109d5afeac0501313d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>cpu_type</element><position>10</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>61e47064c37522109d5afeac05013140</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>cpu_speed</element><position>11</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>6de47064c37522109d5afeac0501313d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>cpu_count</element><position>12</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>6de47064c37522109d5afeac05013140</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>cpu_core_count</element><position>13</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>69e47064c37522109d5afeac0501313e</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.end_split</element><position>14</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>69e47064c37522109d5afeac05013141</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type>.end_split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>short_description</element><position>15</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>65e47064c37522109d5afeac0501313f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>ui_ng_relation_formatter.xml</element><position>16</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_id>e9e47064c37522109d5afeac05013142</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter display_value="CI Relations">b62309137f32310009fedf92bdfa912b</sys_ui_formatter><sys_ui_section caption="Configuration" display_value="Configuration" name="x_1770592_easy_t_0_my_asset_inventory" sys_domain="global" view="Default view">69e47064c37522109d5afeac0501313b</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><type>formatter</type></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>Configuration</caption><header>false</header><name>x_1770592_easy_t_0_my_asset_inventory</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 13:47:57</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>69e47064c37522109d5afeac0501313b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1770592_easy_t_0_my_asset_inventory</sys_name><sys_overrides/><sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package><sys_policy/><sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope><sys_update_name>sys_ui_section_69e47064c37522109d5afeac0501313b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 13:47:57</sys_updated_on><sys_user/><title>false</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>527423057</payload_hash>
+        <record_name>my asset inventory</record_name>
+        <reverted_from/>
+        <source>3f143024c37522109d5afeac05013143</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-25 13:47:57</sys_created_on>
+        <sys_id>6de47064c37522109d5afeac05013145</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19707b3400a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-25 13:47:57</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>e1e4706469752210ca0d704be115f245</update_guid>
+        <update_guid_history>e1e4706469752210ca0d704be115f245:527423057</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-25 13:58:29</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>4ea41838935944d69b4cc6d40335c904</sys_id>
+        <sys_metadata>69e47064c37522109d5afeac0501313b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Configuration</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent display_value="my asset inventory">d8e4fc24c37522109d5afeac050131c4</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sys_ui_section_69e47064c37522109d5afeac0501313b</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_69e47064c37522109d5afeac0501313b">6de47064c37522109d5afeac05013145</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-25 13:58:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

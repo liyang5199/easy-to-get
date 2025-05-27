@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_dictionary action="DELETE" element="assign" table="x_1770592_easy_t_0_my_asset_request">
+        <active>true</active>
+        <array>false</array>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice>0</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Assign</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>assign</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <internal_type display_value="String">string</internal_type>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <name>x_1770592_easy_t_0_my_asset_request</name>
+        <next_element/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_dictionary</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-25 14:17:07</sys_created_on>
+        <sys_id>499bb020c3b522109d5afeac0501319a</sys_id>
+        <sys_name>Assign</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sys_dictionary_x_1770592_easy_t_0_my_asset_request_assign</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-25 14:17:09</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_dictionary>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sys_dictionary_x_1770592_easy_t_0_my_asset_request_assign</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_dictionary action="INSERT_OR_UPDATE" element="assign" table="x_1770592_easy_t_0_my_asset_request"><active>true</active><array>false</array><attributes/><audit>false</audit><calculation/><choice>0</choice><choice_field/><choice_table/><column_label>Assign</column_label><comments/><create_roles/><default_value/><defaultsort/><delete_roles/><dependent/><dependent_on_field/><display>false</display><dynamic_creation>false</dynamic_creation><dynamic_creation_script/><dynamic_default_value/><dynamic_ref_qual/><element>assign</element><element_reference>false</element_reference><foreign_database/><formula/><function_definition/><function_field>false</function_field><internal_type display_value="String">string</internal_type><mandatory>false</mandatory><max_length>40</max_length><name>x_1770592_easy_t_0_my_asset_request</name><next_element/><primary>false</primary><read_only>false</read_only><read_roles/><reference/><reference_cascade_rule/><reference_floats>false</reference_floats><reference_key/><reference_qual/><reference_qual_condition/><reference_type/><spell_check>false</spell_check><staged>false</staged><sys_class_name>sys_dictionary</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-25 14:17:07</sys_created_on><sys_id>499bb020c3b522109d5afeac0501319a</sys_id><sys_name>Assign</sys_name><sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package><sys_policy/><sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope><sys_update_name>sys_dictionary_x_1770592_easy_t_0_my_asset_request_assign</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-25 14:17:09</sys_updated_on><table_reference>false</table_reference><text_index>false</text_index><unique>false</unique><use_dependent_field>false</use_dependent_field><use_dynamic_default>false</use_dynamic_default><use_reference_qualifier>simple</use_reference_qualifier><virtual>false</virtual><virtual_type>script</virtual_type><widget/><write_roles/><xml_view>false</xml_view></sys_dictionary></record_update>]]></payload>
+        <payload_hash>-29603166</payload_hash>
+        <record_name>my asset request.Assign</record_name>
+        <reverted_from/>
+        <source>3f143024c37522109d5afeac05013143</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-25 14:17:09</sys_created_on>
+        <sys_id>299b3420c3b522109d5afeac05013109</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19707cdfe310000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-25 14:17:09</sys_updated_on>
+        <type>Dictionary</type>
+        <update_guid>219b342039b52210764327ef7846c509</update_guid>
+        <update_guid_history>219b342039b52210764327ef7846c509:-29603166,559bf02039b5221035ab46499c22e69a:-729145185</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-25 14:18:04</sys_created_on>
+        <sys_db_object display_value="" name="sys_dictionary">sys_dictionary</sys_db_object>
+        <sys_id>41b5946127e844a8955f97b5847a0040</sys_id>
+        <sys_metadata>499bb020c3b522109d5afeac0501319a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Assign</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent display_value="my asset request">275af4acc37522109d5afeac05013112</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sys_dictionary_x_1770592_easy_t_0_my_asset_request_assign</sys_update_name>
+        <sys_update_version display_value="sys_dictionary_x_1770592_easy_t_0_my_asset_request_assign">299b3420c3b522109d5afeac05013109</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-25 14:18:04</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
