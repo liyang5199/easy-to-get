@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description>用于生成服务目录项目PDF的页面"</description>
+        <direct>true</direct>
+        <endpoint>x_1770592_easy_t_0_Catalog Item PDF Generator.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+  <!-- 获取传递的参数 -->
+  <g:evaluate var="jvar_item_id" expression="RP.getWindowProperties().get('sysparm_item_id')" />
+  <g:evaluate var="jvar_item_name" expression="RP.getWindowProperties().get('sysparm_item_name')" />
+  
+  <!-- 页面结构 -->
+  <div class="container-fluid" style="padding: 20px;">
+    <!-- 标题部分 -->
+    <div class="row" style="border-bottom: 1px solid #ddd; margin-bottom: 20px;">
+      <div class="col-md-12">
+        <h1 style="color: #0369a3;">${jvar_item_name}</h1>
+      </div>
+    </div>
+    
+    <!-- 内容区域 -->
+    <div class="row">
+      <div class="col-md-12" id="pdf-content">
+        <g:evaluate jelly="true">
+          var gr = new GlideRecord('sc_cat_item');
+          gr.get('${jvar_item_id}');
+          
+          // 输出短描述
+          gs.print('<div class="section"><h3>Description</h3><p>' + gr.short_description + '</p></div>');
+          
+          // 输出长描述（如果存在）
+          if (gr.description) {
+            gs.print('<div class="section"><h3>Detailed Information</h3><div>' + gr.description + '</div></div>');
+          }
+          
+          // 输出其他字段示例
+          if (gr.price) {
+            gs.print('<div class="section"><h3>Pricing</h3><p>$' + gr.price + '</p></div>');
+          }
+        </g:evaluate>
+      </div>
+    </div>
+  </div>
+</j:jelly>]]></html>
+        <name>Catalog Item PDF Generator</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 14:20:40</sys_created_on>
+        <sys_id>616ae6cac3b52a109d5afeac05013109</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Catalog Item PDF Generator</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sys_ui_page_616ae6cac3b52a109d5afeac05013109</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 14:20:40</sys_updated_on>
+    </sys_ui_page>
+</record_update>

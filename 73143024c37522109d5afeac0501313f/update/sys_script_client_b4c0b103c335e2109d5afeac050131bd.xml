@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Set Status to Requested on Submit</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+    // 尝试设置状态字段为"submitted"
+    try {
+        // 检查是否已经设置了状态（防止覆盖已有状态）
+        if (!g_form.getValue('my_request_status')) {
+            g_form.setValue('my_request_status', 'Requested');
+        }
+        
+        // 验证必填字段
+        if (!g_form.getValue('computer_model')) {
+            g_form.addErrorMessage('请选择电脑型号');
+            return false; // 阻止提交
+        }
+        
+        if (!g_form.getValue('request_for_dr')) {
+            g_form.addErrorMessage('请选择申请对象');
+            return false; // 阻止提交
+        }
+        
+        return true; // 允许提交
+    } catch (e) {
+        g_form.addErrorMessage('提交时出错: ' + e.message);
+        return false; // 阻止提交
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-02 12:39:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b4c0b103c335e2109d5afeac050131bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Set Status to Requested on Submit</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sys_script_client_b4c0b103c335e2109d5afeac050131bd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-02 12:39:18</sys_updated_on>
+        <table>x_1770592_easy_t_0_my_asset_request</table>
+        <type>onSubmit</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

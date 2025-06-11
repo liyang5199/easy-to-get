@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_email_template">
+    <sysevent_email_template action="INSERT_OR_UPDATE">
+        <collection>incident</collection>
+        <email_layout/>
+        <message/>
+        <message_html><![CDATA[<p>&lt;html&gt;<br>&lt;body style="font-family: Arial, sans-serif; line-height: 1.6;"&gt;<br>&nbsp; &lt;p&gt;Dear ${requested_for.name}，&lt;/p&gt;<br>&nbsp;&nbsp;<br>&nbsp; &lt;p&gt;Your Computer Request &lt;strong&gt;${number}&lt;/strong&gt;was rejected,。&lt;/p&gt;<br>&nbsp;&nbsp;<br>&nbsp; &lt;div style="background-color: #f8f9fa; border-left: 4px solid #dc3545; padding: 10px 15px; margin: 15px 0;"&gt;<br>&nbsp; &nbsp; &lt;p&gt;&lt;strong&gt;Reject Reason：&lt;/strong&gt;&lt;/p&gt;<br>&nbsp; &nbsp; &lt;p&gt;${reject_reason}&lt;/p&gt;<br>&nbsp; &lt;/div&gt;<br>&nbsp;&nbsp;<br>&nbsp; &lt;p&gt;Please revise and resubmmit：&lt;/p&gt;<br>&nbsp;&nbsp;<br>&nbsp; &lt;div style="margin: 20px 0; text-align: center;"&gt;<br>&nbsp; &nbsp; &lt;a href="${resubmit_url}"&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp;style="display: inline-block; background-color: #28a745; color: white;&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 12px 24px; text-decoration: none; border-radius: 4px;&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-weight: bold;"&gt;<br>&nbsp; &nbsp; &nbsp; Click to resubmmit<br>&nbsp; &nbsp; &lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&nbsp;&nbsp;<br>&nbsp; &lt;p&gt;or copy the link to your browser：&lt;/p&gt;<br>&nbsp; &lt;p style="word-break: break-all; color: #007bff;"&gt;${resubmit_url}&lt;/p&gt;<br>&nbsp;&nbsp;<br>&nbsp; &lt;p style="margin-top: 30px; color: #6c757d;"&gt;Auto mail,please do not reply&lt;/p&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Asset Request Rejected with Resubmit Lin</name>
+        <sms_alternate/>
+        <subject>Your Computer Request ${number} was rejected, please revise and  resubmmit,</subject>
+        <sys_class_name>sysevent_email_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-10 15:02:36</sys_created_on>
+        <sys_id>5d1edb25c38222509d5afeac0501313f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Asset Request Rejected with Resubmit Lin</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sysevent_email_template_5d1edb25c38222509d5afeac0501313f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-10 15:02:36</sys_updated_on>
+        <sys_version>2</sys_version>
+    </sysevent_email_template>
+</record_update>

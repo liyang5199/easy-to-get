@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function actionOK() {
+    var ga = new GlideAjax('FieldUpdater');
+    ga.addParam('sysparm_name', 'updateField');
+    ga.addParam('sysparm_sn_number', g_form.getValue('serial_number'));  // 修复参数格式
+    ga.getXML(parseResponse);  // 修正函数名拼写
+    return true;
+}
+
+function parseResponse(response) {  // 修正函数名拼写
+    var answer = response.responseXML.documentElement.getAttribute("answer");
+    var result = JSON.parse(answer);  // 正确解析JSON
+    
+    if (result.answer === 'OK') {
+        GlideModal.get().destroy();
+    } else {
+        alert('UpdateResult: ' + (result.message || 'unknown error'));  // 修正拼写
+        GlideModal.get().destroy();
+    }
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_1770592_easy_t_0_Popup_Dialog.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide">
+    <div style="white-space: normal; padding: 4px; color:#667">
+        ${gs.getMessage('Confirm to update Asset Owner?')}
+        <div style="text-align:right;">
+            <g:dialog_buttons_ok_cancel 
+                ok="return actionOK()" 
+                ok_id="ok_button"  
+                cancel_type="button"
+            />            
+        </div>
+    </div>
+</j:jelly>]]></html>
+        <name>Popup_Dialog</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-06 16:00:24</sys_created_on>
+        <sys_id>74650bd4c34e6a109d5afeac050131a5</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>Popup_Dialog</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sys_ui_page_74650bd4c34e6a109d5afeac050131a5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-07 14:28:08</sys_updated_on>
+    </sys_ui_page>
+</record_update>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="DELETE">
+        <action_name>generate_pdf</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>true</form_context_menu>
+        <form_link>true</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>true</isolate_script>
+        <list_action>true</list_action>
+        <list_banner_button>true</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>true</list_choice>
+        <list_context_menu>true</list_context_menu>
+        <list_link>true</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Generate PDF</name>
+        <onclick> generatePDF()</onclick>
+        <order>100</order>
+        <script><![CDATA[function generatePDF() {
+    try {
+        // 从URL获取sys_id的替代方法
+        var sysId = (function() {
+            // 尝试从g_form获取
+            if (typeof g_form !== 'undefined' && typeof g_form.getUniqueValue === 'function') {
+                return g_form.getUniqueValue();
+            }
+            // 从URL解析
+            var matches = window.location.href.match(/sys_id=([^&]+)/);
+            return matches ? matches[1] : null;
+        })();
+        
+        if (!sysId) {
+            alert('Error: Cannot determine record ID. Please open a record first.');
+            return;
+        }
+        
+        // 构建下载URL
+        var apiUrl = 'api/x_1770592_easy_t_0/asset_request_pdf_generator/generate/' + sysId;
+        
+        // 触发下载
+        window.location.href = apiUrl;
+        
+    } catch (e) {
+        console.error('Error:', e);
+        alert('Error generating PDF: ' + e.message);
+    }
+}]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 13:41:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ad212acec3752a109d5afeac050131c5</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>Generate PDF</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sys_ui_action_ad212acec3752a109d5afeac050131c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-31 13:53:17</sys_updated_on>
+        <table>x_1770592_easy_t_0_my_asset_request</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sys_ui_action_ad212acec3752a109d5afeac050131c5</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_action"&gt;&lt;sys_ui_action action="INSERT_OR_UPDATE"&gt;&lt;action_name&gt;generate_pdf&lt;/action_name&gt;&lt;active&gt;true&lt;/active&gt;&lt;client&gt;true&lt;/client&gt;&lt;client_script_v2&gt;&lt;![CDATA[function onClick(g_form) {
+
+}]]&gt;&lt;/client_script_v2&gt;&lt;comments/&gt;&lt;condition/&gt;&lt;form_action&gt;true&lt;/form_action&gt;&lt;form_button&gt;true&lt;/form_button&gt;&lt;form_button_v2&gt;false&lt;/form_button_v2&gt;&lt;form_context_menu&gt;true&lt;/form_context_menu&gt;&lt;form_link&gt;true&lt;/form_link&gt;&lt;form_menu_button_v2&gt;false&lt;/form_menu_button_v2&gt;&lt;form_style/&gt;&lt;format_for_configurable_workspace&gt;false&lt;/format_for_configurable_workspace&gt;&lt;hint/&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;list_action&gt;true&lt;/list_action&gt;&lt;list_banner_button&gt;true&lt;/list_banner_button&gt;&lt;list_button&gt;false&lt;/list_button&gt;&lt;list_choice&gt;true&lt;/list_choice&gt;&lt;list_context_menu&gt;true&lt;/list_context_menu&gt;&lt;list_link&gt;true&lt;/list_link&gt;&lt;list_save_with_form_button&gt;false&lt;/list_save_with_form_button&gt;&lt;list_style/&gt;&lt;messages/&gt;&lt;name&gt;Generate PDF&lt;/name&gt;&lt;onclick&gt; generatePDF()&lt;/onclick&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[function generatePDF() {
+    try {
+        // 从URL获取sys_id的替代方法
+        var sysId = (function() {
+            // 尝试从g_form获取
+            if (typeof g_form !== 'undefined' &amp;&amp; typeof g_form.getUniqueValue === 'function') {
+                return g_form.getUniqueValue();
+            }
+            // 从URL解析
+            var matches = window.location.href.match(/sys_id=([^&amp;]+)/);
+            return matches ? matches[1] : null;
+        })();
+        
+        if (!sysId) {
+            alert('Error: Cannot determine record ID. Please open a record first.');
+            return;
+        }
+        
+        // 构建下载URL
+        var apiUrl = 'api/x_1770592_easy_t_0/asset_request_pdf_generator/generate/' + sysId;
+        
+        // 触发下载
+        window.location.href = apiUrl;
+        
+    } catch (e) {
+        console.error('Error:', e);
+        alert('Error generating PDF: ' + e.message);
+    }
+}]]&gt;&lt;/script&gt;&lt;show_insert&gt;true&lt;/show_insert&gt;&lt;show_multiple_update&gt;false&lt;/show_multiple_update&gt;&lt;show_query&gt;false&lt;/show_query&gt;&lt;show_update&gt;true&lt;/show_update&gt;&lt;sys_class_name&gt;sys_ui_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-05-30 13:41:41&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;ad212acec3752a109d5afeac050131c5&lt;/sys_id&gt;&lt;sys_mod_count&gt;24&lt;/sys_mod_count&gt;&lt;sys_name&gt;Generate PDF&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Easy to get" source="x_1770592_easy_t_0"&gt;73143024c37522109d5afeac0501313f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Easy to get"&gt;73143024c37522109d5afeac0501313f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_action_ad212acec3752a109d5afeac050131c5&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-05-31 13:53:17&lt;/sys_updated_on&gt;&lt;table&gt;x_1770592_easy_t_0_my_asset_request&lt;/table&gt;&lt;ui11_compatible&gt;true&lt;/ui11_compatible&gt;&lt;ui16_compatible&gt;false&lt;/ui16_compatible&gt;&lt;/sys_ui_action&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-342439540</payload_hash>
+        <record_name>Generate PDF</record_name>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-31 13:53:17</sys_created_on>
+        <sys_id>1aafafdac37122109d5afeac0501317c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197269e48f70000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-31 13:53:17</sys_updated_on>
+        <type>UI Action</type>
+        <update_guid>9eafafda19712210e58ac868782c747b</update_guid>
+        <update_guid_history>9eafafda19712210e58ac868782c747b:-342439540,fdac67d6ce7122105461357226707027:-770706444,791cafd6d2712210501e66d28ff1797f:-2042877754,04fb67d68c712210f1203d9398492baf:-92975996,189aab52327122102bf2a658d5ad5b38:1985132949,cb6923160c712210000d2dbebce35666:1568995791,aa73a7dadb312210f08a75f4f18f6180:-2090392848,ef006396b3312210e05b713b9011f94d:992049415,3c7f1f96a5312210f0fcd9edfaa4c96a:-1052264973,f59b3a12273d6a10b71d12a76b04c5fd:403931352,e45a7a1e11f96a10aed1f7872e1e0f22:1296075468,65e832dae9f96a100c1493dbc16dbce3:-403719188,7815fad639f96a104f0b283bd404a4ab:1575933271,97ed5e9a8d796a108edf4dd235275132:-122239277,12cc1a96e0796a105c90e5f0943076cd:-1976759675,1d9b925669796a10b29de9e4c7247b36:-2660095,4dd85e1660796a107af9c02509e9151f:-2050694491,6797da92ac796a101d4ee38d60da44b7:-1192769326,e037da12ea796a108a4b335ab48943f8:544732485,b2969a126e796a10b33a6bde42bebde5:-1700570493,a8c5161227796a10ecb2af0ccfd36edd:-1829210808,de85925ed1396a10d936effa62f4b5d3:859764506,03046d52dd756a10d0b937680870fae7:-1994269620,8327e2066bb52a10f39b965b6756ca1b:32784560,ee636e02aab52a10ec77d4bdc914b0f6:-1994269620</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-31 14:14:20</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action">sys_ui_action</sys_db_object>
+        <sys_id>455d0ae9566c48dbab9430d9d8503d79</sys_id>
+        <sys_metadata>ad212acec3752a109d5afeac050131c5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Generate PDF</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent display_value="my asset request">275af4acc37522109d5afeac05013112</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sys_ui_action_ad212acec3752a109d5afeac050131c5</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_ad212acec3752a109d5afeac050131c5">1aafafdac37122109d5afeac0501317c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-31 14:14:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

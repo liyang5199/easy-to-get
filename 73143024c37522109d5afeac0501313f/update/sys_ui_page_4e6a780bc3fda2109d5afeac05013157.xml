@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_1770592_easy_t_0_My Asset Request.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+    <!-- Yokohama版本正确的依赖加载方式 -->
+    <g:requires name="styles/bootstrap.min.css" includes="true" />
+    <g:requires name="scripts/jquery-3.6.0.min.js" includes="true" />
+    <g:requires name="scripts/bootstrap.min.js" includes="true" />
+    
+    <h2>资产请求状态更新</h2>
+    <p>当前记录 ID：${sysparm_sys_id}</p>
+
+    <button id="updateBtn" class="btn btn-primary">更新状态</button>
+
+    <div id="confirmDialog" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">确认操作</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>确认要将状态更新为 "Approved" 吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="confirmOk" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        // Yokohama版本推荐的自执行函数封装方式
+        var $j = jQuery.noConflict();
+        
+        $j(document).ready(function() {
+            // 初始化模态框
+            var modal = $j('#confirmDialog').modal({
+                show: false,
+                backdrop: 'static'
+            });
+            
+            $j('#updateBtn').on('click', function() {
+                modal.modal('show');
+            });
+            
+            $j('#confirmOk').on('click', function() {
+                modal.modal('hide');
+                updateField();
+            });
+            
+            function updateField() {
+                var sysId = '${sysparm_sys_id}';
+                
+                var ga = new GlideAjax('MyAssetRequestUpdater');
+                ga.addParam('sysparm_name', 'updateFieldValue');
+                ga.addParam('sysparm_sys_id', sysId);
+                ga.addParam('sysparm_table', 'x_1770592_easy_t_0_my_asset_request');
+                ga.addParam('sysparm_field', 'my_request_status');
+                ga.addParam('sysparm_value', 'Approved');
+                
+                ga.getXMLAnswer(function(response) {
+                    if (response === "success") {
+                        gs.addInfoMessage("更新成功!");
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        gs.addErrorMessage("更新失败: " + response);
+                    }
+                }, function(error) {
+                    gs.addErrorMessage("请求失败: " + error.status);
+                });
+            }
+        });
+    })();
+    </script>
+</j:jelly>]]></html>
+        <name>My Asset Request</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-02 08:42:31</sys_created_on>
+        <sys_id>4e6a780bc3fda2109d5afeac05013157</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>My Asset Request</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sys_ui_page_4e6a780bc3fda2109d5afeac05013157</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-02 12:02:16</sys_updated_on>
+    </sys_ui_page>
+</record_update>

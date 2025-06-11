@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1770592_easy_t_0.GeneratePDFAjax</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>true</mobile_callable>
+        <name>GeneratePDFAjax</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[var GeneratePDFAjax = Class.create();
+GeneratePDFAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    generatePDF: function() {
+        var sysId = this.getParameter('sysparm_sysid');
+        var gr = new GlideRecord('x_1770592_easy_t_0_my_asset_request');
+        if (gr.get(sysId)) {
+            // 创建HTML内容
+            var html = this._createHTMLContent(gr);
+            
+            // 生成PDF
+            var pdf = new PDFDocument(html);
+            var attachment = new GlideSysAttachment();
+            var fileName = 'AssetRequest_' + sysId + '.pdf';
+            var contentType = 'application/pdf';
+            var attachmentSysId = attachment.write(gr, fileName, contentType, pdf.getStream());
+            
+            if (attachmentSysId) {
+                // 返回PDF下载URL
+                return '/sys_attachment.do?sys_id=' + attachmentSysId;
+            }
+        }
+        return '';
+    },
+    
+    _createHTMLContent: function(gr) {
+        var html = '<html><head><style>' +
+                   'body { font-family: Arial, sans-serif; }' +
+                   'h1 { color: #036; }' +
+                   'table { width: 100%; border-collapse: collapse; }' +
+                   'th { background-color: #f2f2f2; text-align: left; padding: 8px; }' +
+                   'td { padding: 8px; border-bottom: 1px solid #ddd; }' +
+                   '</style></head><body>';
+        
+        html += '<h1>Asset Request Details</h1>';
+        html += '<table>';
+        html += '<tr><th>Field</th><th>Value</th></tr>';
+        html += '<tr><td>Manager</td><td>' + gr.manager.getDisplayValue() + '</td></tr>';
+        html += '<tr><td>Request for DR</td><td>' + gr.request_for_dr + '</td></tr>';
+        html += '<tr><td>Computer Model</td><td>' + gr.computer_model + '</td></tr>';
+        html += '<tr><td>Request Status</td><td>' + gr.my_request_status + '</td></tr>';
+        html += '<tr><td>Notes</td><td>' + gr.my_notes + '</td></tr>';
+        html += '</table></body></html>';
+        
+        return html;
+    },
+    
+    type: 'GeneratePDFAjax'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-31 02:23:06</sys_created_on>
+        <sys_id>ba81999ac3f16a109d5afeac05013149</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>GeneratePDFAjax</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sys_script_include_ba81999ac3f16a109d5afeac05013149</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-31 13:13:39</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sys_script_include_ba81999ac3f16a109d5afeac05013149</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1770592_easy_t_0.GeneratePDFAjax&lt;/api_name&gt;&lt;caller_access&gt;1&lt;/caller_access&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;true&lt;/mobile_callable&gt;&lt;name&gt;GeneratePDFAjax&lt;/name&gt;&lt;sandbox_callable&gt;true&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var GeneratePDFAjax = Class.create();
+GeneratePDFAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    generatePDF: function() {
+        var sysId = this.getParameter('sysparm_sysid');
+        var gr = new GlideRecord('x_1770592_easy_t_0_my_asset_request');
+        if (gr.get(sysId)) {
+            // 创建HTML内容
+            var html = this._createHTMLContent(gr);
+            
+            // 生成PDF
+            var pdf = new PDFDocument(html);
+            var attachment = new GlideSysAttachment();
+            var fileName = 'AssetRequest_' + sysId + '.pdf';
+            var contentType = 'application/pdf';
+            var attachmentSysId = attachment.write(gr, fileName, contentType, pdf.getStream());
+            
+            if (attachmentSysId) {
+                // 返回PDF下载URL
+                return '/sys_attachment.do?sys_id=' + attachmentSysId;
+            }
+        }
+        return '';
+    },
+    
+    _createHTMLContent: function(gr) {
+        var html = '&lt;html&gt;&lt;head&gt;&lt;style&gt;' +
+                   'body { font-family: Arial, sans-serif; }' +
+                   'h1 { color: #036; }' +
+                   'table { width: 100%; border-collapse: collapse; }' +
+                   'th { background-color: #f2f2f2; text-align: left; padding: 8px; }' +
+                   'td { padding: 8px; border-bottom: 1px solid #ddd; }' +
+                   '&lt;/style&gt;&lt;/head&gt;&lt;body&gt;';
+        
+        html += '&lt;h1&gt;Asset Request Details&lt;/h1&gt;';
+        html += '&lt;table&gt;';
+        html += '&lt;tr&gt;&lt;th&gt;Field&lt;/th&gt;&lt;th&gt;Value&lt;/th&gt;&lt;/tr&gt;';
+        html += '&lt;tr&gt;&lt;td&gt;Manager&lt;/td&gt;&lt;td&gt;' + gr.manager.getDisplayValue() + '&lt;/td&gt;&lt;/tr&gt;';
+        html += '&lt;tr&gt;&lt;td&gt;Request for DR&lt;/td&gt;&lt;td&gt;' + gr.request_for_dr + '&lt;/td&gt;&lt;/tr&gt;';
+        html += '&lt;tr&gt;&lt;td&gt;Computer Model&lt;/td&gt;&lt;td&gt;' + gr.computer_model + '&lt;/td&gt;&lt;/tr&gt;';
+        html += '&lt;tr&gt;&lt;td&gt;Request Status&lt;/td&gt;&lt;td&gt;' + gr.my_request_status + '&lt;/td&gt;&lt;/tr&gt;';
+        html += '&lt;tr&gt;&lt;td&gt;Notes&lt;/td&gt;&lt;td&gt;' + gr.my_notes + '&lt;/td&gt;&lt;/tr&gt;';
+        html += '&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;';
+        
+        return html;
+    },
+    
+    type: 'GeneratePDFAjax'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-05-31 02:23:06&lt;/sys_created_on&gt;&lt;sys_id&gt;ba81999ac3f16a109d5afeac05013149&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_name&gt;GeneratePDFAjax&lt;/sys_name&gt;&lt;sys_package display_value="Easy to get" source="x_1770592_easy_t_0"&gt;73143024c37522109d5afeac0501313f&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Easy to get"&gt;73143024c37522109d5afeac0501313f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_ba81999ac3f16a109d5afeac05013149&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-05-31 13:13:39&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>159851311</payload_hash>
+        <record_name>GeneratePDFAjax</record_name>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-31 13:13:40</sys_created_on>
+        <sys_id>ca96efdec33122109d5afeac050131d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197267a04f20000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-31 13:13:40</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>7196efde59312210e016a628e1f399d1</update_guid>
+        <update_guid_history>7196efde59312210e016a628e1f399d1:159851311,a57223da08312210f076b6ff804dac7a:-1395147878,94a83a9aedf96a1093fd7658a6b2f863:1689810921,8b86761a91f96a101e47af7ebd08fffd:1075194625,75f5be1aacf96a1096c45e9ac9c6ea90:2058096318,d4b15d9a0cf16a106f7a1be849a3c97e:-732302240</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-31 14:47:36</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>19fef38292e14ccc8223a34a4aff3e24</sys_id>
+        <sys_metadata>ba81999ac3f16a109d5afeac05013149</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GeneratePDFAjax</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sys_script_include_ba81999ac3f16a109d5afeac05013149</sys_update_name>
+        <sys_update_version display_value="sys_script_include_ba81999ac3f16a109d5afeac05013149">ca96efdec33122109d5afeac050131d1</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-31 14:47:36</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

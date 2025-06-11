@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1770592_easy_t_0.GenerateAssetRequestPDF</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>GenerateAssetRequestPDF</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[var GlobalAjax = Class.create();
+GlobalAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    
+    generatePDF: function() {
+        try {
+            // === 1. 获取记录数据 ===
+            var sysId = this.getParameter('sysparm_sysid');
+            var gr = new GlideRecord('x_1770592_easy_t_0_my_asset_request');
+            if (!gr.get(sysId)) return "ERROR: 记录不存在";
+
+            // === 2. 准备数据（服务端安全获取）===
+            var recordData = {
+                manager: gr.getDisplayValue('manager') || '未填写', // 使用getDisplayValue获取引用字段显示值
+                request_for_dr: gr.getValue('request_for_dr') || '未填写',
+                computer_model: gr.getValue('computer_model') || '未填写',
+                status: gr.getValue('my_request_status') || '未填写',
+                notes: gr.getValue('my_notes') || '未填写',
+                date: new GlideDateTime().getDisplayValue() // 服务端可安全调用
+            };
+
+            // === 3. 生成HTML（服务端模板）===
+            var htmlTemplate = [
+                '<html><head><meta charset="UTF-8"><style>',
+                'body { font-family: "Microsoft YaHei", Arial; margin: 15mm; }',
+                'h1 { color: #1a5276; text-align: center; }',
+                '.label { font-weight: bold; width: 30%; }',
+                '.footer { position: absolute; bottom: 0; font-size: 10px; }',
+                '</style></head>',
+                '<body>',
+                '<h1>IT资产申请表</h1>',
+                '<table style="width:100%; margin-top:20px;">',
+                '<tr><td class="label">申请人：</td><td>' + recordData.manager + '</td></tr>',
+                '<tr><td class="label">灾备需求：</td><td>' + recordData.request_for_dr + '</td></tr>',
+                '<tr><td class="label">设备型号：</td><td>' + recordData.computer_model + '</td></tr>',
+                '<tr><td class="label">申请状态：</td><td>' + recordData.status + '</td></tr>',
+                '<tr><td class="label" style="vertical-align:top;">补充说明：</td><td>' + recordData.notes.replace(/\n/g, '<br>') + '</td></tr>',
+                '</table>',
+                '<div class="footer">系统生成时间：' + recordData.date + '</div>',
+                '</body></html>'
+            ].join('');
+
+            // === 4. 生成PDF附件 ===
+            var pdfGen = new Packages.com.servicenow.misc.PDFUtils();
+            var pdfBytes = pdfGen.generate(htmlTemplate);
+            
+            var attachment = new GlideSysAttachment();
+            var fileName = '资产申请_' + sysId + '.pdf';
+            var attachmentId = attachment.write(
+                gr.getTableName(), 
+                sysId, 
+                fileName, 
+                'application/pdf', 
+                pdfBytes
+            );
+            
+            return attachmentId.toString(); // 必须返回字符串
+
+        } catch (e) {
+            return "ERROR: " + e.message;
+        }
+    },
+    
+    type: 'GlobalAjax'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-31 14:55:29</sys_created_on>
+        <sys_id>892cbf1ec3b122109d5afeac05013101</sys_id>
+        <sys_mod_count>33</sys_mod_count>
+        <sys_name>GenerateAssetRequestPDF</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sys_script_include_892cbf1ec3b122109d5afeac05013101</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-02 08:06:11</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sys_script_include_892cbf1ec3b122109d5afeac05013101</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1770592_easy_t_0.GenerateAssetRequestPDF&lt;/api_name&gt;&lt;caller_access&gt;1&lt;/caller_access&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;GenerateAssetRequestPDF&lt;/name&gt;&lt;sandbox_callable&gt;true&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var GlobalAjax = Class.create();
+GlobalAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    
+    generatePDF: function() {
+        try {
+            // === 1. 获取记录数据 ===
+            var sysId = this.getParameter('sysparm_sysid');
+            var gr = new GlideRecord('x_1770592_easy_t_0_my_asset_request');
+            if (!gr.get(sysId)) return "ERROR: 记录不存在";
+
+            // === 2. 准备数据（服务端安全获取）===
+            var recordData = {
+                manager: gr.getDisplayValue('manager') || '未填写', // 使用getDisplayValue获取引用字段显示值
+                request_for_dr: gr.getValue('request_for_dr') || '未填写',
+                computer_model: gr.getValue('computer_model') || '未填写',
+                status: gr.getValue('my_request_status') || '未填写',
+                notes: gr.getValue('my_notes') || '未填写',
+                date: new GlideDateTime().getDisplayValue() // 服务端可安全调用
+            };
+
+            // === 3. 生成HTML（服务端模板）===
+            var htmlTemplate = [
+                '&lt;html&gt;&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;style&gt;',
+                'body { font-family: "Microsoft YaHei", Arial; margin: 15mm; }',
+                'h1 { color: #1a5276; text-align: center; }',
+                '.label { font-weight: bold; width: 30%; }',
+                '.footer { position: absolute; bottom: 0; font-size: 10px; }',
+                '&lt;/style&gt;&lt;/head&gt;',
+                '&lt;body&gt;',
+                '&lt;h1&gt;IT资产申请表&lt;/h1&gt;',
+                '&lt;table style="width:100%; margin-top:20px;"&gt;',
+                '&lt;tr&gt;&lt;td class="label"&gt;申请人：&lt;/td&gt;&lt;td&gt;' + recordData.manager + '&lt;/td&gt;&lt;/tr&gt;',
+                '&lt;tr&gt;&lt;td class="label"&gt;灾备需求：&lt;/td&gt;&lt;td&gt;' + recordData.request_for_dr + '&lt;/td&gt;&lt;/tr&gt;',
+                '&lt;tr&gt;&lt;td class="label"&gt;设备型号：&lt;/td&gt;&lt;td&gt;' + recordData.computer_model + '&lt;/td&gt;&lt;/tr&gt;',
+                '&lt;tr&gt;&lt;td class="label"&gt;申请状态：&lt;/td&gt;&lt;td&gt;' + recordData.status + '&lt;/td&gt;&lt;/tr&gt;',
+                '&lt;tr&gt;&lt;td class="label" style="vertical-align:top;"&gt;补充说明：&lt;/td&gt;&lt;td&gt;' + recordData.notes.replace(/\n/g, '&lt;br&gt;') + '&lt;/td&gt;&lt;/tr&gt;',
+                '&lt;/table&gt;',
+                '&lt;div class="footer"&gt;系统生成时间：' + recordData.date + '&lt;/div&gt;',
+                '&lt;/body&gt;&lt;/html&gt;'
+            ].join('');
+
+            // === 4. 生成PDF附件 ===
+            var pdfGen = new Packages.com.servicenow.misc.PDFUtils();
+            var pdfBytes = pdfGen.generate(htmlTemplate);
+            
+            var attachment = new GlideSysAttachment();
+            var fileName = '资产申请_' + sysId + '.pdf';
+            var attachmentId = attachment.write(
+                gr.getTableName(), 
+                sysId, 
+                fileName, 
+                'application/pdf', 
+                pdfBytes
+            );
+            
+            return attachmentId.toString(); // 必须返回字符串
+
+        } catch (e) {
+            return "ERROR: " + e.message;
+        }
+    },
+    
+    type: 'GlobalAjax'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-05-31 14:55:29&lt;/sys_created_on&gt;&lt;sys_id&gt;892cbf1ec3b122109d5afeac05013101&lt;/sys_id&gt;&lt;sys_mod_count&gt;33&lt;/sys_mod_count&gt;&lt;sys_name&gt;GenerateAssetRequestPDF&lt;/sys_name&gt;&lt;sys_package display_value="Easy to get" source="x_1770592_easy_t_0"&gt;73143024c37522109d5afeac0501313f&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Easy to get"&gt;73143024c37522109d5afeac0501313f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_892cbf1ec3b122109d5afeac05013101&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-06-02 08:06:11&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>557311460</payload_hash>
+        <record_name>GenerateAssetRequestPDF</record_name>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-02 08:06:11</sys_created_on>
+        <sys_id>d163f803c3fda2109d5afeac05013179</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1972fad39ae0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-02 08:06:11</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>5963f803a8fda210190fa67fdc402678</update_guid>
+        <update_guid_history>5963f803a8fda210190fa67fdc402678:557311460,e7d1f8cb9abda210ade6a406c97a5551:2146453749,be2ce087a2bda210d52a78f7b1522e37:2112466572,654aa08779bda210c68e2d7d1fb4605e:-1751677815,62f7a4034cbda2102a78e46bf31b4b17:1304967829,8e85e0cf187da210a1a8c74472da6c23:-1210320269,0664a4c7357da210ad6f07a7d191e562:-809228038,7553e88b8c7da210d34f765c17a791c2:819090310,5d04900b733da21039ef16fc62b93dd9:-1121095399,6fd504c348f9a21074ec907ebbe03d13:179309221,dbafdd3ef9bd62102da5c679136d8316:1616377799,4c0a5536a1bd6210e322c343f364238d:-52150229,3e92117e317d62107e596632b224d41d:1476610879,f7b81aaa89bd221025afee5653cc2155:-1013259727,e0771a6e02bd2210f3e50cfd218bbad7:-486215486,14b6da2e4abd22102e47acdaabccfded:-1650392172,ebf4d6a653bd221080c510b70da65221:1666649735,f351d626f8bd2210c470ba3107f8720b:-672756259,1cefc22616bd221011e1535cf5b37cf6:1386984524,272dca2206bd22102d6a9c94e78c8446:-1550541996,22e6862a7e7d221012db3595f8435aaa:-210845601,a66cfde62a3d221017c54dab9e275c72:-201276141,aa0f182a2375221026a31a049615d0bd:1652854979,ab1e182aed75221081214be2128f22b6:-1658962068,278910a268752210dc2dc59095c77ac9:-194389145,77d794225f752210c0ef5a9b60d3f45c:-339383901,2846d4ae67352210a3d611ff31891645:1464321646,76b59c6aeb35221057024ad90e549879:401941533,b375902a7b35221006b00b1fb727da02:-1844604431,199010260a352210775d6577569a7fe9:1024408000,d20e40264b352210dfee6bb0edefae42:-19004808,066d8862ba352210dbf204d5c8b1123b:1583667080,9d12cc262af122105ca6c1076a678e03:-1002104911,65ed735e4eb1221062839e0016111b15:-383102665</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-06 07:13:23</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>b87790f75089420386424d873ef520e1</sys_id>
+        <sys_metadata>892cbf1ec3b122109d5afeac05013101</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GenerateAssetRequestPDF</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sys_script_include_892cbf1ec3b122109d5afeac05013101</sys_update_name>
+        <sys_update_version display_value="sys_script_include_892cbf1ec3b122109d5afeac05013101">d163f803c3fda2109d5afeac05013179</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-06 07:13:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

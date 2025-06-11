@@ -2,15 +2,19 @@
     <element db_object_id="275af4acc37522109d5afeac05013112" extends="sc_request" label="my asset request" max_length="40" name="x_1770592_easy_t_0_my_asset_request" type="collection">
         <element label="Request for DR" max_length="32" name="request_for_dr" reference="sys_user" type="reference"/>
         <element label="My Notes" max_length="40" name="my_notes" type="string"/>
-        <element choice="3" label="My Request Status" max_length="40" name="my_request_status" type="choice">
+        <element choice="3" default="draft" label="My Request Status" max_length="40" name="my_request_status" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Approved" sequence="2" value="approved"/>
-                <element inactive_on_update="false" label="Waiting for approval" sequence="0" value="waiting_for_approval"/>
-                <element inactive_on_update="false" label="Requested" sequence="3" value="requested"/>
-                <element inactive_on_update="false" label="Rejected" sequence="1" value="rejected"/>
+                <element inactive_on_update="false" label="Approved" sequence="1" value="approved"/>
+                <element inactive_on_update="false" label="Returned" sequence="3" value="returned"/>
+                <element inactive_on_update="false" label="Submitted" sequence="2" value="submitted"/>
+                <element inactive_on_update="false" label="Rejected" sequence="0" value="rejected"/>
+                <element inactive_on_update="false" label="Resubmitted" sequence="5" value="resubmitted"/>
+                <element inactive_on_update="false" label="Draft" sequence="4" value="draft"/>
             </choice>
         </element>
         <element default="javascript:gs.getUserID();" dynamic_default_value="90d1921e5f510100a9ad2572f2b477fe" label="Manager" max_length="32" name="manager" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element label="Reject Reason" max_length="1000" name="reject_reason" type="string"/>
+        <element label="Resubmit Allowed" max_length="255" name="u_resubmit_allowed" type="boolean"/>
         <element display="true" label="Computer Model" max_length="32" name="computer_model" reference="x_1770592_easy_t_0_my_computer_model" type="reference"/>
         <index name="index">
             <element name="computer_model"/>

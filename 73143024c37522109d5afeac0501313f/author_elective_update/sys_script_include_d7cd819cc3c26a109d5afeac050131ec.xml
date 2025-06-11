@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1770592_easy_t_0.FieldUpdater</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>FieldUpdater</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[var FieldUpdater = Class.create();
+FieldUpdater.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    updateField: function() {
+        try {
+            var table = this.getParameter('sysparm_table');
+            var sysId = this.getParameter('sysparm_sys_id');
+            var field = this.getParameter('sysparm_field');
+            var value = this.getParameter('sysparm_value');
+            
+            var gr = new GlideRecord(table);
+            if (gr.get(sysId)) {
+                gr.setValue(field, value); // 更新指定字段
+                gr.update();
+                this.setAttribute('answer', 'success');
+            } else {
+                this.setAttribute('answer', 'Record not found');
+            }
+        } catch (e) {
+            this.setAttribute('answer', 'Error: ' + e.message);
+        }
+    }
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-06 07:25:53</sys_created_on>
+        <sys_id>d7cd819cc3c26a109d5afeac050131ec</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>FieldUpdater</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sys_script_include_d7cd819cc3c26a109d5afeac050131ec</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-06 13:46:55</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sys_script_include_d7cd819cc3c26a109d5afeac050131ec</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1770592_easy_t_0.FieldUpdater&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;FieldUpdater&lt;/name&gt;&lt;sandbox_callable&gt;true&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var FieldUpdater = Class.create();
+FieldUpdater.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    updateField: function() {
+        try {
+            var table = this.getParameter('sysparm_table');
+            var sysId = this.getParameter('sysparm_sys_id');
+            var field = this.getParameter('sysparm_field');
+            var value = this.getParameter('sysparm_value');
+            
+            var gr = new GlideRecord(table);
+            if (gr.get(sysId)) {
+                gr.setValue(field, value); // 更新指定字段
+                gr.update();
+                this.setAttribute('answer', 'success');
+            } else {
+                this.setAttribute('answer', 'Record not found');
+            }
+        } catch (e) {
+            this.setAttribute('answer', 'Error: ' + e.message);
+        }
+    }
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-06-06 07:25:53&lt;/sys_created_on&gt;&lt;sys_id&gt;d7cd819cc3c26a109d5afeac050131ec&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_name&gt;FieldUpdater&lt;/sys_name&gt;&lt;sys_package display_value="Easy to get" source="x_1770592_easy_t_0"&gt;73143024c37522109d5afeac0501313f&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Easy to get"&gt;73143024c37522109d5afeac0501313f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_d7cd819cc3c26a109d5afeac050131ec&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-06-06 13:46:55&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-376523690</payload_hash>
+        <record_name>FieldUpdater</record_name>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-06 13:46:55</sys_created_on>
+        <sys_id>a3b76e50c3ca6a109d5afeac05013182</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197457e9d5b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-06 13:46:55</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>2bb76e50d2ca6a104839da38027ae281</update_guid>
+        <update_guid_history>2bb76e50d2ca6a104839da38027ae281:-376523690,08a221d43b466a10ab8700b965673ab4:941444259,142a119c71066a10ae4212bd338448ff:-1978503339,ba98551cea066a1007e688c9dad6adeb:1578281679,9280d95049066a10bd6a7a6af79604bf:912065222</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-06 14:19:54</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>2c930dd80127412681c13fa688c3c011</sys_id>
+        <sys_metadata>d7cd819cc3c26a109d5afeac050131ec</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FieldUpdater</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sys_script_include_d7cd819cc3c26a109d5afeac050131ec</sys_update_name>
+        <sys_update_version display_value="sys_script_include_d7cd819cc3c26a109d5afeac050131ec">a3b76e50c3ca6a109d5afeac05013182</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-06 14:19:54</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
