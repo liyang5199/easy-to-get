@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_ais">
+    <sp_instance_ais action="DELETE">
+        <active>true</active>
+        <ai_search_source_filter display_value="Service Portal Knowledge Bases">eb77cac5772300102d71af6168106160</ai_search_source_filter>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <disable_all_suggestions>false</disable_all_suggestions>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <placeholder/>
+        <result_count_font_size>md</result_count_font_size>
+        <roles/>
+        <search_application/>
+        <search_results_configuration/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">4037dd9ac306e2509d5afeac0501310f</sp_column>
+        <sp_widget display_value="Typeahead Search">fa20ec02cb31020000f8d856634c9ce9</sp_widget>
+        <spell_check_font_size>xl</spell_check_font_size>
+        <sys_class_name>sp_instance_ais</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 13:02:49</sys_created_on>
+        <sys_id>0837dd9ac306e2509d5afeac05013111</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sp_instance_ais_0837dd9ac306e2509d5afeac05013111</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 13:02:49</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"title": {
+		"value": "Search Knowledge",
+		"displayValue": "Search Knowledge"
+	},
+	"placeholder": {
+		"value": "Search Knowledge",
+		"displayValue": "Search Knowledge"
+	},
+	"color": {
+		"value": "",
+		"displayValue": ""
+	},
+	"glyph": {
+		"value": "",
+		"displayValue": ""
+	},
+	"size": {
+		"value": "",
+		"displayValue": ""
+	},
+	"limit": {
+		"value": null,
+		"displayValue": ""
+	},
+	"contextual_search_sources": {
+		"value": "c6170ae86721220023c82e08f585efe6",
+		"displayValue": "Knowledge Base"
+	}
+}]]></widget_parameters>
+    </sp_instance_ais>
+    <sys_translated_text action="DELETE" query="documentkey=0837dd9ac306e2509d5afeac05013111"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sp_instance_ais_0837dd9ac306e2509d5afeac05013111</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance_ais"&gt;&lt;sp_instance_ais action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;ai_search_source_filter display_value="Service Portal Knowledge Bases"&gt;eb77cac5772300102d71af6168106160&lt;/ai_search_source_filter&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;disable_all_suggestions&gt;false&lt;/disable_all_suggestions&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;placeholder/&gt;&lt;result_count_font_size&gt;md&lt;/result_count_font_size&gt;&lt;roles/&gt;&lt;search_application/&gt;&lt;search_results_configuration/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="2"&gt;4037dd9ac306e2509d5afeac0501310f&lt;/sp_column&gt;&lt;sp_widget display_value="Typeahead Search"&gt;fa20ec02cb31020000f8d856634c9ce9&lt;/sp_widget&gt;&lt;spell_check_font_size&gt;xl&lt;/spell_check_font_size&gt;&lt;sys_class_name&gt;sp_instance_ais&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-06-12 13:02:49&lt;/sys_created_on&gt;&lt;sys_id&gt;0837dd9ac306e2509d5afeac05013111&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Easy to get" source="x_1770592_easy_t_0"&gt;73143024c37522109d5afeac0501313f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Easy to get"&gt;73143024c37522109d5afeac0501313f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_ais_0837dd9ac306e2509d5afeac05013111&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-06-12 13:02:49&lt;/sys_updated_on&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"title": {
+		"value": "Search Knowledge",
+		"displayValue": "Search Knowledge"
+	},
+	"placeholder": {
+		"value": "Search Knowledge",
+		"displayValue": "Search Knowledge"
+	},
+	"color": {
+		"value": "",
+		"displayValue": ""
+	},
+	"glyph": {
+		"value": "",
+		"displayValue": ""
+	},
+	"size": {
+		"value": "",
+		"displayValue": ""
+	},
+	"limit": {
+		"value": null,
+		"displayValue": ""
+	},
+	"contextual_search_sources": {
+		"value": "c6170ae86721220023c82e08f585efe6",
+		"displayValue": "Knowledge Base"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance_ais&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=0837dd9ac306e2509d5afeac05013111"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-79768003</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 13:02:49</sys_created_on>
+        <sys_id>8837dd9ac306e2509d5afeac05013113</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197643c665b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 13:02:49</sys_updated_on>
+        <type>Instance with Search</type>
+        <update_guid>8c37dd9a6806e250d8e9473827da5112</update_guid>
+        <update_guid_history>8c37dd9a6806e250d8e9473827da5112:-79768003</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">74c7d9dac306e2509d5afeac050131fb</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 13:05:20</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_ais">sp_instance_ais</sys_db_object>
+        <sys_id>0a7366dc0b7b439780ac4dfecd5ceb31</sys_id>
+        <sys_metadata>0837dd9ac306e2509d5afeac05013111</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sp_instance_ais_0837dd9ac306e2509d5afeac05013111</sys_update_name>
+        <sys_update_version display_value="sp_instance_ais_0837dd9ac306e2509d5afeac05013111">8837dd9ac306e2509d5afeac05013113</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 13:05:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

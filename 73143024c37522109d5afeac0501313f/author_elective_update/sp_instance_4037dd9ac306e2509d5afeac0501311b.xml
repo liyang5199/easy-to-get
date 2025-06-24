@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph>empty</glyph>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">8837dd9ac306e2509d5afeac05013118</sp_column>
+        <sp_widget display_value="KB Knowledge Bases">fa384fda730823004a1f3ae234f6a78a</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 13:02:49</sys_created_on>
+        <sys_id>4037dd9ac306e2509d5afeac0501311b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Knowledge Bases</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sp_instance_4037dd9ac306e2509d5afeac0501311b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 13:02:49</sys_updated_on>
+        <title>Knowledge Bases</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=4037dd9ac306e2509d5afeac0501311b"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sp_instance_4037dd9ac306e2509d5afeac0501311b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph>empty</glyph><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">8837dd9ac306e2509d5afeac05013118</sp_column><sp_widget display_value="KB Knowledge Bases">fa384fda730823004a1f3ae234f6a78a</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-12 13:02:49</sys_created_on><sys_id>4037dd9ac306e2509d5afeac0501311b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Knowledge Bases</sys_name><sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package><sys_policy/><sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope><sys_update_name>sp_instance_4037dd9ac306e2509d5afeac0501311b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-12 13:02:49</sys_updated_on><title>Knowledge Bases</title><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=4037dd9ac306e2509d5afeac0501311b"/></record_update>]]></payload>
+        <payload_hash>1834271923</payload_hash>
+        <record_name>Knowledge Bases</record_name>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 13:02:49</sys_created_on>
+        <sys_id>c037dd9ac306e2509d5afeac0501311d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197643c66bc0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 13:02:49</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>c437dd9a1406e2505e8abb4feb3e441c</update_guid>
+        <update_guid_history>c437dd9a1406e2505e8abb4feb3e441c:1834271923</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Knowledge Bases">09c71ddac306e2509d5afeac05013147</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 13:05:21</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>38fda62bc39d4f6081532be0c2ad4400</sys_id>
+        <sys_metadata>4037dd9ac306e2509d5afeac0501311b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Knowledge Bases</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sp_instance_4037dd9ac306e2509d5afeac0501311b</sys_update_name>
+        <sys_update_version display_value="sp_instance_4037dd9ac306e2509d5afeac0501311b">c037dd9ac306e2509d5afeac0501311d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 13:05:21</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

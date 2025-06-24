@@ -53,9 +53,9 @@
         <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
         <sys_update_name>sys_dictionary_x_1770592_easy_t_0_my_asset_request_null</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-25 14:11:50</sys_updated_on>
+        <sys_updated_on>2025-06-24 06:53:08</sys_updated_on>
         <table_reference>false</table_reference>
-        <text_index>false</text_index>
+        <text_index>true</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>

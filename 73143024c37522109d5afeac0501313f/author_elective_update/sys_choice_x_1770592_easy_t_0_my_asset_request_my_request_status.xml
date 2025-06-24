@@ -115,19 +115,19 @@
             <element>my_request_status</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Resubmitted</label>
+            <label>wait for fulfillment</label>
             <language>en</language>
             <name>x_1770592_easy_t_0_my_asset_request</name>
             <sequence>5</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-06-02 14:00:26</sys_created_on>
+            <sys_created_on>2025-06-24 07:10:42</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>1</sys_mod_count>
+            <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-06-03 01:52:11</sys_updated_on>
-            <value>resubmitted</value>
+            <sys_updated_on>2025-06-24 07:10:42</sys_updated_on>
+            <value>wait_for_fulfillment</value>
         </sys_choice>
     </sys_choice>
 </record_update>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="fed6a078c33962109d5afeac05013161" label="my computer model" max_length="40" name="x_1770592_easy_t_0_my_computer_model" type="collection">
+    <element db_object_id="fed6a078c33962109d5afeac05013161" label="my computer model" max_length="40" name="x_1770592_easy_t_0_my_computer_model" text_index="true" type="collection">
         <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
         <element display="true" label="Asset Model Number" max_length="40" name="asset_model_number" type="string"/>
         <index name="index">

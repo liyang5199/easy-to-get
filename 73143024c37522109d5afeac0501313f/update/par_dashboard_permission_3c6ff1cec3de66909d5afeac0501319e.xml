@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_permission">
+    <par_dashboard_permission action="INSERT_OR_UPDATE">
+        <can_read>true</can_read>
+        <can_share>false</can_share>
+        <can_write>true</can_write>
+        <dashboard display_value="Easy to get">efa57502c3de66909d5afeac0501316e</dashboard>
+        <group/>
+        <owner>false</owner>
+        <role/>
+        <sys_class_name>par_dashboard_permission</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-24 07:35:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3c6ff1cec3de66909d5afeac0501319e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>efa57502c3de66909d5afeac0501316e</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>par_dashboard_permission_3c6ff1cec3de66909d5afeac0501319e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-24 07:35:40</sys_updated_on>
+        <user display_value="Caitlin Reiniger">f282abf03710200044e0bfc8bcbe5d1b</user>
+    </par_dashboard_permission>
+</record_update>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="275af4acc37522109d5afeac05013112" extends="sc_request" label="my asset request" max_length="40" name="x_1770592_easy_t_0_my_asset_request" type="collection">
+    <element db_object_id="275af4acc37522109d5afeac05013112" extends="sc_request" label="my asset request" max_length="40" name="x_1770592_easy_t_0_my_asset_request" text_index="true" type="collection">
         <element label="Request for DR" max_length="32" name="request_for_dr" reference="sys_user" type="reference"/>
         <element label="My Notes" max_length="40" name="my_notes" type="string"/>
         <element choice="3" default="draft" label="My Request Status" max_length="40" name="my_request_status" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Approved" sequence="1" value="approved"/>
                 <element inactive_on_update="false" label="Returned" sequence="3" value="returned"/>
+                <element inactive_on_update="false" label="wait for fulfillment" sequence="5" value="wait_for_fulfillment"/>
                 <element inactive_on_update="false" label="Submitted" sequence="2" value="submitted"/>
                 <element inactive_on_update="false" label="Rejected" sequence="0" value="rejected"/>
-                <element inactive_on_update="false" label="Resubmitted" sequence="5" value="resubmitted"/>
                 <element inactive_on_update="false" label="Draft" sequence="4" value="draft"/>
             </choice>
         </element>

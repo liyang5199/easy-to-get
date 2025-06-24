@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[function($filter,spUtil,cabrillo,$rootScope, i18n) {
+	/* widget controller */
+	var c = this;
+	c.isNative = cabrillo.isNative() && c.options.override_mobile;
+	
+	//Use KB specific stylic for all portals unless rating style is set.
+	c.KBRatingStyle = c.options.kb_rating_style;
+
+	c.getOrderedItems = function() {
+		var filtered = $filter('limitTo') (c.options.result, c.options.max_records);
+		return $filter('orderBy') (filtered, 'count', c.options.reverse);
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>$kb-item-box-shadow: 1px 1px 10px 0.2px rgba(0,0,0,0.1)!default;
+
+.kb-list-item{
+  border-bottom: none;
+  border-top: none; 
+}
+small{
+  font-size:93%; 
+}
+.secondary-info{
+  color:$text-muted;
+  padding-top: 3px;
+}
+.main_text a{
+  display:block; 
+}
+.dot{
+  padding:5px; 
+}
+.kb-star-on {
+  text-shadow: $fav-star-outline;
+}
+.kb-star-off {
+  color: $fav-star-color-off !important;
+  text-shadow: $fav-star-outline;
+}
+.sp-stars{
+  display: inline-flex;
+  letter-spacing: .5px;
+}
+.kb-rating-stars{
+  font-size: 12px;
+  display: inline-flex;
+  margin-top: -6px;
+
+  .glyphicon{
+    line-height: 0; 
+  }
+  .rating-stars [role="button"] {
+    cursor: text;
+  }
+}
+.kb-mobile{
+  .kb-mobile-panel{
+    .panel-heading{
+      padding-left:0px !important;
+      .panel-title{
+        font-size:20px !important; 
+      }
+    }
+    .kb-item-block{
+      box-shadow: $kb-item-box-shadow;
+      padding:15px;
+      margin-bottom:10px;
+      margin-top: 15px;
+      border-radius: 7px;
+    }
+  }
+}
+.kb-list-block.has-icon {
+  .kb-list-item {
+    .kb-list-row {
+      overflow: hidden;
+      clear: both;
+    }
+    .kb-list-col-icon {
+      float: left;
+      width : 30px;
+      padding-top: 3px;
+      .fa {
+        width: 30px;
+        font-size: 20px;
+        vertical-align: middle;
+        color: $brand-primary;
+        float: left;
+      }
+    }
+    .kb-list-col-content {
+      float: left;
+      width: calc(100% - 30px);
+    }
+  }
+}
+.kb-rating-stars [role="slider"]:focus{
+   box-shadow:none !important;
+   outline:none !important;
+   border:none !important;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function(scope) {	
+	var c = scope.c;
+	
+	c.openArticleAttachment = function(url, name,  external) {
+		if(external) {
+			var params = 'toolbar=no,menubar=no,personalbar=no,height='+screen.height + ',' + 'width='+screen.width + ',' + 'scrollbars=yes,resizable=yes,fullscreen=yes';
+			window.open(url, name, params);
+		}
+		else
+			window.open(url, name, "toolbar=no,menubar=no,personalbar=no,width=800,height=600,scrollbars=yes,resizable=yes");
+	};
+	
+	c.roundOff = function(val){
+		if(val)
+			return Math.round(val);
+		else
+			return 0;
+	};
+}]]></link>
+        <name>Copy of Knowledge List Widget Template</name>
+        <option_schema>[{"name":"override_mobile","section":"other","default_value":"true","label":"Override Mobile","type":"boolean"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+	data.useDocumentViewer = (gs.getProperty('sn_km_portal.glide.knowman.serviceportal.use_document_viewer', 'false') == 'true') && GlidePluginManager.isActive('com.snc.documentviewer');
+	data.externalContentLabel = gs.getMessage(gs.getProperty('sn_km_intg.glide.knowman.external.ui_label_for_external_content', 'External Content')) || gs.getMessage('External Content');
+	options.kb_rating_style = options.kb_rating_style ? options.kb_rating_style == "true" : true;
+	options.show_secondary_information = options.show_secondary_information != null ? options.show_secondary_information : true;
+	var viewPageId = $sp.getParameter("id");
+	data.isKBView= (viewPageId == "kb_article_view" || viewPageId == "kb_article");
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 12:24:56</sys_created_on>
+        <sys_id>818e895ec3c2e2509d5afeac05013166</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Knowledge List Widget Template</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sp_widget_818e895ec3c2e2509d5afeac05013166</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 12:24:56</sys_updated_on>
+        <template><![CDATA[<div class="kb-list-block" ng-if="c.options.always_show || c.options.result.length" ng-class="{'has-icon' : c.options.glyph, 'kb-mobile' : c.isNative, 'kb-desktop' : !c.isNative}">
+  <div ng-class="c.isNative ? 'kb-mobile-panel' : 'panel panel-{{::c.options.color}} b'">
+    <div class="panel-heading" ng-class="{'b-b': !c.options.color}"> 
+      <h2 ng-if="c.data.isKBView" class="panel-title" ng-bind="::options.title" aria-label="{{options.aria_label_title}}">
+      <fa ng-if="::options.glyph" name="{{::options.glyph}}" class="m-r-sm" /></h2>
+      <h3 ng-if="!c.data.isKBView" class="panel-title" ng-bind="::options.title" aria-label="{{options.aria_label_title}}">
+      <fa ng-if="::options.glyph" name="{{::options.glyph}}" class="m-r-sm" /></h3>
+    </div>
+    <div ng-if="c.options.result.length > 0" class="list-group hide-x-overflow" style="max-height: {{::c.options.panel_body_height || 'none'}}; overflow-y: auto;" role="list" aria-label="{{options.aria_label_title}}">
+      <div ng-repeat="item in c.getOrderedItems() track by item.id" class="list-group-item kb-list-item" ng-class="{'kb-item-block':c.isNative}" role="listitem">
+        <div class="kb-list-row">
+          <div class="kb-list-col-icon" ng-if="::c.options.glyph">
+            <i class="fa fa-{{::c.options.glyph}}" aria-hidden="true"></i>
+          </div>
+          <div class="kb-list-col-content">
+            <div class="main_text" >
+              <a tabindex="0" ng-attr-target="{{((item.direct === true && c.data.useDocumentViewer == true) || item.external_link) ? item.id : ''}}" ng-href="{{((item.direct === true && c.data.useDocumentViewer == true) || item.external_link) ? (item.external_link || (item.link + '&view=true')) : item.link}}">
+                <div ng-switch on="::item.display_field.type" ng-class="{'l-h-40': !item.secondary_fields.length}">
+                  <span class="translated-html" ng-switch-when="translated_html" ng-bind-html="::item.display_field"></span>
+                  <div ng-switch-default ng-bind="::item.display_field"></div>
+                </div>
+              </a>
+            </div>
+            <small>
+              <div class="secondary-info" ng-if="c.options.show_secondary_information">
+                <span class="about-outer-span">
+                  <span class="sr-only">${Article Metadata}</span>
+                  <span ng-repeat="f in item.secondary_fields track by $index">                 
+                    <span ng-if="f.value || f.name == 'rating'">
+                      <span ng-switch="f.name" class="art-label">
+                        <span ng-switch-when="rating">
+                          <span ng-if="!$first" class="dot" aria-hidden="true"> • </span>
+                          <span class="no-wrap" disabled="true" ng-init="ratingVal =c.roundOff(f.value)">
+                            <span class="kb-rating-stars" ng-if="::c.KBRatingStyle">
+                              <span class="sr-only">${Article has rating - {{c.roundOff(f.value)}} out of 5 stars}</span>
+                              <uib-rating ng-model="ratingVal" max="5" readonly="true" tabindex="-1" aria-hidden="true"/>
+                            </span>
+                            <span class="sp-stars" ng-if="!c.KBRatingStyle">
+                              <span class="sr-only">${Article has rating - {{c.roundOff(f.value)}} out of 5 stars}</span>
+                              <span uib-rating sp-rating ng-model="::ratingVal" max="5" readonly="true" aria-hidden="true" state-on="'fa fa-star kb-star-on'" state-off="'fa fa-star kb-star-off'" tabindex="-1"/>
+                            </span>
+                          </span>
+                        </span>
+                        <span ng-switch-when="sys_view_count">
+                          <span ng-if="!$first" class="dot" aria-hidden="true"> • </span>
+                          <span ng-if ="::f.value == '1' " class="no-warp">
+                            <span aria-hidden="true" dir="auto">{{::f.value}} ${View}</span>
+                            <span class="no-warp sr-only">${Article has {{::f.value}} view}</span>
+                          </span>
+                          <span ng-if ="::f.value != '1' " class="no-warp">
+                            <span aria-hidden="true" dir="auto">{{::f.value}} ${Views}</span>
+                          	<span class="sr-only">${Article has {{::f.value}} views}</span>
+                          </span>
+                        </span>
+                        <span ng-switch-when="workflow_state">                        
+                          <span ng-if="!$first" class="dot" aria-hidden="true"> • </span><span class="no-warp" aria-hidden="true"><span ng-bind="::f.display_value"></span> ${State}</span>
+                          <span class="sr-only">${Article is in {{::f.display_value}} state}</span>
+                        </span>
+                        <span ng-switch-when="external">                        
+                          <span ng-if="f.value == 'true'">
+                            <span ng-if="!$first" class="dot" aria-hidden="true"> • </span><span ng-bind="::c.data.externalContentLabel"></span>
+                          </span>
+                        </span>
+                        <span ng-switch-default="" ng-switch="f.type">
+                          <span ng-if="!$first" class="dot" aria-hidden="true"> • </span>
+                          <span class="no-warp">
+                            <span class="secondary-label" ng-if="c.options.show_secondary_fields_label">{{::f.label}}: </span>
+                            <span ng-switch-when="glide_date">
+                              <span class="sr-only">${Updated}</span>
+                              <sn-time-ago timestamp="::f.value"/>
+                            </span>
+                            <span ng-switch-when="glide_date_time">
+                              <span class="sr-only">${Updated}</span>
+                              <sn-time-ago timestamp="::f.value" />
+                            </span>
+                            <span ng-switch-default="" ng-bind="::f.display_value" aria-hidden="{{f.label == 'Author'}}"></span>
+                            <span class="sr-only" ng-if="f.label == 'Author' && f.display_value">${Authored by {{::f.display_value}}}</span>
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </small>
+          </div>
+        </div>
+      </div>       
+    </div>
+    <div ng-if="!c.options.result.length" class="list-group-item" style="border:none">
+      ${No content to display}
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sp_widget_818e895ec3c2e2509d5afeac05013166</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function($filter,spUtil,cabrillo,$rootScope, i18n) {
+	/* widget controller */
+	var c = this;
+	c.isNative = cabrillo.isNative() &amp;&amp; c.options.override_mobile;
+	
+	//Use KB specific stylic for all portals unless rating style is set.
+	c.KBRatingStyle = c.options.kb_rating_style;
+
+	c.getOrderedItems = function() {
+		var filtered = $filter('limitTo') (c.options.result, c.options.max_records);
+		return $filter('orderBy') (filtered, 'count', c.options.reverse);
+	}
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;$kb-item-box-shadow: 1px 1px 10px 0.2px rgba(0,0,0,0.1)!default;
+
+.kb-list-item{
+  border-bottom: none;
+  border-top: none; 
+}
+small{
+  font-size:93%; 
+}
+.secondary-info{
+  color:$text-muted;
+  padding-top: 3px;
+}
+.main_text a{
+  display:block; 
+}
+.dot{
+  padding:5px; 
+}
+.kb-star-on {
+  text-shadow: $fav-star-outline;
+}
+.kb-star-off {
+  color: $fav-star-color-off !important;
+  text-shadow: $fav-star-outline;
+}
+.sp-stars{
+  display: inline-flex;
+  letter-spacing: .5px;
+}
+.kb-rating-stars{
+  font-size: 12px;
+  display: inline-flex;
+  margin-top: -6px;
+
+  .glyphicon{
+    line-height: 0; 
+  }
+  .rating-stars [role="button"] {
+    cursor: text;
+  }
+}
+.kb-mobile{
+  .kb-mobile-panel{
+    .panel-heading{
+      padding-left:0px !important;
+      .panel-title{
+        font-size:20px !important; 
+      }
+    }
+    .kb-item-block{
+      box-shadow: $kb-item-box-shadow;
+      padding:15px;
+      margin-bottom:10px;
+      margin-top: 15px;
+      border-radius: 7px;
+    }
+  }
+}
+.kb-list-block.has-icon {
+  .kb-list-item {
+    .kb-list-row {
+      overflow: hidden;
+      clear: both;
+    }
+    .kb-list-col-icon {
+      float: left;
+      width : 30px;
+      padding-top: 3px;
+      .fa {
+        width: 30px;
+        font-size: 20px;
+        vertical-align: middle;
+        color: $brand-primary;
+        float: left;
+      }
+    }
+    .kb-list-col-content {
+      float: left;
+      width: calc(100% - 30px);
+    }
+  }
+}
+.kb-rating-stars [role="slider"]:focus{
+   box-shadow:none !important;
+   outline:none !important;
+   border:none !important;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id/&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function(scope) {	
+	var c = scope.c;
+	
+	c.openArticleAttachment = function(url, name,  external) {
+		if(external) {
+			var params = 'toolbar=no,menubar=no,personalbar=no,height='+screen.height + ',' + 'width='+screen.width + ',' + 'scrollbars=yes,resizable=yes,fullscreen=yes';
+			window.open(url, name, params);
+		}
+		else
+			window.open(url, name, "toolbar=no,menubar=no,personalbar=no,width=800,height=600,scrollbars=yes,resizable=yes");
+	};
+	
+	c.roundOff = function(val){
+		if(val)
+			return Math.round(val);
+		else
+			return 0;
+	};
+}]]&gt;&lt;/link&gt;&lt;name&gt;Copy of Knowledge List Widget Template&lt;/name&gt;&lt;option_schema&gt;[{"name":"override_mobile","section":"other","default_value":"true","label":"Override Mobile","type":"boolean"}]&lt;/option_schema&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+	data.useDocumentViewer = (gs.getProperty('sn_km_portal.glide.knowman.serviceportal.use_document_viewer', 'false') == 'true') &amp;&amp; GlidePluginManager.isActive('com.snc.documentviewer');
+	data.externalContentLabel = gs.getMessage(gs.getProperty('sn_km_intg.glide.knowman.external.ui_label_for_external_content', 'External Content')) || gs.getMessage('External Content');
+	options.kb_rating_style = options.kb_rating_style ? options.kb_rating_style == "true" : true;
+	options.show_secondary_information = options.show_secondary_information != null ? options.show_secondary_information : true;
+	var viewPageId = $sp.getParameter("id");
+	data.isKBView= (viewPageId == "kb_article_view" || viewPageId == "kb_article");
+	
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-06-12 12:24:56&lt;/sys_created_on&gt;&lt;sys_id&gt;818e895ec3c2e2509d5afeac05013166&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Copy of Knowledge List Widget Template&lt;/sys_name&gt;&lt;sys_package display_value="Easy to get" source="x_1770592_easy_t_0"&gt;73143024c37522109d5afeac0501313f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Easy to get"&gt;73143024c37522109d5afeac0501313f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_818e895ec3c2e2509d5afeac05013166&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-06-12 12:24:56&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="kb-list-block" ng-if="c.options.always_show || c.options.result.length" ng-class="{'has-icon' : c.options.glyph, 'kb-mobile' : c.isNative, 'kb-desktop' : !c.isNative}"&gt;
+  &lt;div ng-class="c.isNative ? 'kb-mobile-panel' : 'panel panel-{{::c.options.color}} b'"&gt;
+    &lt;div class="panel-heading" ng-class="{'b-b': !c.options.color}"&gt; 
+      &lt;h2 ng-if="c.data.isKBView" class="panel-title" ng-bind="::options.title" aria-label="{{options.aria_label_title}}"&gt;
+      &lt;fa ng-if="::options.glyph" name="{{::options.glyph}}" class="m-r-sm" /&gt;&lt;/h2&gt;
+      &lt;h3 ng-if="!c.data.isKBView" class="panel-title" ng-bind="::options.title" aria-label="{{options.aria_label_title}}"&gt;
+      &lt;fa ng-if="::options.glyph" name="{{::options.glyph}}" class="m-r-sm" /&gt;&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div ng-if="c.options.result.length &gt; 0" class="list-group hide-x-overflow" style="max-height: {{::c.options.panel_body_height || 'none'}}; overflow-y: auto;" role="list" aria-label="{{options.aria_label_title}}"&gt;
+      &lt;div ng-repeat="item in c.getOrderedItems() track by item.id" class="list-group-item kb-list-item" ng-class="{'kb-item-block':c.isNative}" role="listitem"&gt;
+        &lt;div class="kb-list-row"&gt;
+          &lt;div class="kb-list-col-icon" ng-if="::c.options.glyph"&gt;
+            &lt;i class="fa fa-{{::c.options.glyph}}" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;div class="kb-list-col-content"&gt;
+            &lt;div class="main_text" &gt;
+              &lt;a tabindex="0" ng-attr-target="{{((item.direct === true &amp;&amp; c.data.useDocumentViewer == true) || item.external_link) ? item.id : ''}}" ng-href="{{((item.direct === true &amp;&amp; c.data.useDocumentViewer == true) || item.external_link) ? (item.external_link || (item.link + '&amp;view=true')) : item.link}}"&gt;
+                &lt;div ng-switch on="::item.display_field.type" ng-class="{'l-h-40': !item.secondary_fields.length}"&gt;
+                  &lt;span class="translated-html" ng-switch-when="translated_html" ng-bind-html="::item.display_field"&gt;&lt;/span&gt;
+                  &lt;div ng-switch-default ng-bind="::item.display_field"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;small&gt;
+              &lt;div class="secondary-info" ng-if="c.options.show_secondary_information"&gt;
+                &lt;span class="about-outer-span"&gt;
+                  &lt;span class="sr-only"&gt;${Article Metadata}&lt;/span&gt;
+                  &lt;span ng-repeat="f in item.secondary_fields track by $index"&gt;                 
+                    &lt;span ng-if="f.value || f.name == 'rating'"&gt;
+                      &lt;span ng-switch="f.name" class="art-label"&gt;
+                        &lt;span ng-switch-when="rating"&gt;
+                          &lt;span ng-if="!$first" class="dot" aria-hidden="true"&gt; • &lt;/span&gt;
+                          &lt;span class="no-wrap" disabled="true" ng-init="ratingVal =c.roundOff(f.value)"&gt;
+                            &lt;span class="kb-rating-stars" ng-if="::c.KBRatingStyle"&gt;
+                              &lt;span class="sr-only"&gt;${Article has rating - {{c.roundOff(f.value)}} out of 5 stars}&lt;/span&gt;
+                              &lt;uib-rating ng-model="ratingVal" max="5" readonly="true" tabindex="-1" aria-hidden="true"/&gt;
+                            &lt;/span&gt;
+                            &lt;span class="sp-stars" ng-if="!c.KBRatingStyle"&gt;
+                              &lt;span class="sr-only"&gt;${Article has rating - {{c.roundOff(f.value)}} out of 5 stars}&lt;/span&gt;
+                              &lt;span uib-rating sp-rating ng-model="::ratingVal" max="5" readonly="true" aria-hidden="true" state-on="'fa fa-star kb-star-on'" state-off="'fa fa-star kb-star-off'" tabindex="-1"/&gt;
+                            &lt;/span&gt;
+                          &lt;/span&gt;
+                        &lt;/span&gt;
+                        &lt;span ng-switch-when="sys_view_count"&gt;
+                          &lt;span ng-if="!$first" class="dot" aria-hidden="true"&gt; • &lt;/span&gt;
+                          &lt;span ng-if ="::f.value == '1' " class="no-warp"&gt;
+                            &lt;span aria-hidden="true" dir="auto"&gt;{{::f.value}} ${View}&lt;/span&gt;
+                            &lt;span class="no-warp sr-only"&gt;${Article has {{::f.value}} view}&lt;/span&gt;
+                          &lt;/span&gt;
+                          &lt;span ng-if ="::f.value != '1' " class="no-warp"&gt;
+                            &lt;span aria-hidden="true" dir="auto"&gt;{{::f.value}} ${Views}&lt;/span&gt;
+                          	&lt;span class="sr-only"&gt;${Article has {{::f.value}} views}&lt;/span&gt;
+                          &lt;/span&gt;
+                        &lt;/span&gt;
+                        &lt;span ng-switch-when="workflow_state"&gt;                        
+                          &lt;span ng-if="!$first" class="dot" aria-hidden="true"&gt; • &lt;/span&gt;&lt;span class="no-warp" aria-hidden="true"&gt;&lt;span ng-bind="::f.display_value"&gt;&lt;/span&gt; ${State}&lt;/span&gt;
+                          &lt;span class="sr-only"&gt;${Article is in {{::f.display_value}} state}&lt;/span&gt;
+                        &lt;/span&gt;
+                        &lt;span ng-switch-when="external"&gt;                        
+                          &lt;span ng-if="f.value == 'true'"&gt;
+                            &lt;span ng-if="!$first" class="dot" aria-hidden="true"&gt; • &lt;/span&gt;&lt;span ng-bind="::c.data.externalContentLabel"&gt;&lt;/span&gt;
+                          &lt;/span&gt;
+                        &lt;/span&gt;
+                        &lt;span ng-switch-default="" ng-switch="f.type"&gt;
+                          &lt;span ng-if="!$first" class="dot" aria-hidden="true"&gt; • &lt;/span&gt;
+                          &lt;span class="no-warp"&gt;
+                            &lt;span class="secondary-label" ng-if="c.options.show_secondary_fields_label"&gt;{{::f.label}}: &lt;/span&gt;
+                            &lt;span ng-switch-when="glide_date"&gt;
+                              &lt;span class="sr-only"&gt;${Updated}&lt;/span&gt;
+                              &lt;sn-time-ago timestamp="::f.value"/&gt;
+                            &lt;/span&gt;
+                            &lt;span ng-switch-when="glide_date_time"&gt;
+                              &lt;span class="sr-only"&gt;${Updated}&lt;/span&gt;
+                              &lt;sn-time-ago timestamp="::f.value" /&gt;
+                            &lt;/span&gt;
+                            &lt;span ng-switch-default="" ng-bind="::f.display_value" aria-hidden="{{f.label == 'Author'}}"&gt;&lt;/span&gt;
+                            &lt;span class="sr-only" ng-if="f.label == 'Author' &amp;&amp; f.display_value"&gt;${Authored by {{::f.display_value}}}&lt;/span&gt;
+                          &lt;/span&gt;
+                        &lt;/span&gt;
+                      &lt;/span&gt;
+                    &lt;/span&gt;
+                  &lt;/span&gt;
+                &lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;       
+    &lt;/div&gt;
+    &lt;div ng-if="!c.options.result.length" class="list-group-item" style="border:none"&gt;
+      ${No content to display}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-346050544</payload_hash>
+        <record_name>Copy of Knowledge List Widget Template</record_name>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 12:24:56</sys_created_on>
+        <sys_id>858e895ec3c2e2509d5afeac05013168</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1976419b67c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 12:24:56</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>898e895e4fc2e2505560ddbfd5a44f67</update_guid>
+        <update_guid_history>898e895e4fc2e2505560ddbfd5a44f67:-346050544</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Copy of Knowledge List Widget Template">0a05ddd6c306e2509d5afeac05013125</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 12:53:24</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>27a4333cd4c04fca88b681954a0b6344</sys_id>
+        <sys_metadata>818e895ec3c2e2509d5afeac05013166</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Knowledge List Widget Template</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sp_widget_818e895ec3c2e2509d5afeac05013166</sys_update_name>
+        <sys_update_version display_value="sp_widget_818e895ec3c2e2509d5afeac05013166">858e895ec3c2e2509d5afeac05013168</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 12:53:24</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

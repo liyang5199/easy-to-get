@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="DELETE">
+        <category>kb</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>copy_of_kb_view2_1</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles>snc_external,snc_internal</roles>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 13:01:59</sys_created_on>
+        <sys_id>3ff6551ac306e2509d5afeac05013197</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>copy_of_kb_view2_1</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sp_page_3ff6551ac306e2509d5afeac05013197</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 13:01:59</sys_updated_on>
+        <title>Copy of Knowledge Base (1)</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="DELETE" query="documentkey=3ff6551ac306e2509d5afeac05013197"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sp_page_3ff6551ac306e2509d5afeac05013197</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page"><sp_page action="INSERT_OR_UPDATE"><category>kb</category><css/><draft>false</draft><dynamic_title_structure/><human_readable_url_structure/><id>copy_of_kb_view2_1</id><internal>false</internal><omit_watcher>false</omit_watcher><public>false</public><roles>snc_external,snc_internal</roles><seo_script/><short_description/><sys_class_name>sp_page</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-12 13:01:59</sys_created_on><sys_id>3ff6551ac306e2509d5afeac05013197</sys_id><sys_mod_count>0</sys_mod_count><sys_name>copy_of_kb_view2_1</sys_name><sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package><sys_policy/><sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope><sys_update_name>sp_page_3ff6551ac306e2509d5afeac05013197</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-12 13:01:59</sys_updated_on><title>Copy of Knowledge Base (1)</title><use_seo_script>false</use_seo_script></sp_page><sys_translated_text action="delete_multiple" query="documentkey=3ff6551ac306e2509d5afeac05013197"/></record_update>]]></payload>
+        <payload_hash>1376728206</payload_hash>
+        <record_name>copy_of_kb_view2_1</record_name>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 13:01:59</sys_created_on>
+        <sys_id>f3f6551ac306e2509d5afeac0501319b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197643ba1ec0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 13:01:59</sys_updated_on>
+        <type>Page</type>
+        <update_guid>f7f6551a6306e250fdb9bd38858c9a9a</update_guid>
+        <update_guid_history>f7f6551a6306e250fdb9bd38858c9a9a:1376728206</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="copy_of_kb_view2_1">07c7d9dac306e2509d5afeac050131cd</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 13:05:31</sys_created_on>
+        <sys_db_object display_value="" name="sp_page">sp_page</sys_db_object>
+        <sys_id>e1cf84f31b9f49cca835af17356ff184</sys_id>
+        <sys_metadata>3ff6551ac306e2509d5afeac05013197</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>copy_of_kb_view2_1</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sp_page_3ff6551ac306e2509d5afeac05013197</sys_update_name>
+        <sys_update_version display_value="sp_page_3ff6551ac306e2509d5afeac05013197">f3f6551ac306e2509d5afeac0501319b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 13:05:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

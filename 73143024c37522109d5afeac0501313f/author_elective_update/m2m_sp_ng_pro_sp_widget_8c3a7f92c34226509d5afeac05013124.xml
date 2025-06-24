@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="DELETE">
+        <sp_angular_provider display_value="spKBCategoryService">10eb7596c7033200b0b0409b9b97631c</sp_angular_provider>
+        <sp_widget display_value="Copy of KB Category Page">c43a7f92c34226509d5afeac0501311f</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-13 00:54:58</sys_created_on>
+        <sys_id>8c3a7f92c34226509d5afeac05013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>spKBCategoryService.Copy of KB Category Page</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_8c3a7f92c34226509d5afeac05013124</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-13 00:54:58</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>m2m_sp_ng_pro_sp_widget_8c3a7f92c34226509d5afeac05013124</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget"><m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE"><sp_angular_provider display_value="spKBCategoryService">10eb7596c7033200b0b0409b9b97631c</sp_angular_provider><sp_widget display_value="Copy of KB Category Page">c43a7f92c34226509d5afeac0501311f</sp_widget><sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-13 00:54:58</sys_created_on><sys_id>8c3a7f92c34226509d5afeac05013124</sys_id><sys_mod_count>0</sys_mod_count><sys_name>spKBCategoryService.Copy of KB Category Page</sys_name><sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package><sys_policy/><sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope><sys_update_name>m2m_sp_ng_pro_sp_widget_8c3a7f92c34226509d5afeac05013124</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-13 00:54:58</sys_updated_on></m2m_sp_ng_pro_sp_widget></record_update>]]></payload>
+        <payload_hash>2008179665</payload_hash>
+        <record_name>spKBCategoryService.Copy of KB Category Page</record_name>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-13 00:54:59</sys_created_on>
+        <sys_id>4c3abf92c34226509d5afeac0501319c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19766c867400000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-13 00:54:59</sys_updated_on>
+        <type>Angular Providers</type>
+        <update_guid>cc3a7f920b4226500e6e8c1c19b8df26</update_guid>
+        <update_guid_history>cc3a7f920b4226500e6e8c1c19b8df26:2008179665</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="spKBCategoryService.Copy of KB Category Page">3da099aec3c626509d5afeac050131f1</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-13 07:12:45</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_ng_pro_sp_widget">m2m_sp_ng_pro_sp_widget</sys_db_object>
+        <sys_id>6f9cd69377fb43db80df08ebfa1fa2d1</sys_id>
+        <sys_metadata>8c3a7f92c34226509d5afeac05013124</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>spKBCategoryService.Copy of KB Category Page</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_8c3a7f92c34226509d5afeac05013124</sys_update_name>
+        <sys_update_version display_value="m2m_sp_ng_pro_sp_widget_8c3a7f92c34226509d5afeac05013124">4c3abf92c34226509d5afeac0501319c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-13 07:12:45</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

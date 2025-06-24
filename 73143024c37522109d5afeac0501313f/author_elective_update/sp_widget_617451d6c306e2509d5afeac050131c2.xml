@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>kb</category>
+        <client_script><![CDATA[function ($scope, $element, $rootScope, $timeout, spKBCategoryService) {
+	var accessWordCountMax = 15;
+	var c = this;
+	init();
+	
+	if (spKBCategoryService.isCategorySelected())
+		focusTitle();
+	
+	c.getShortenText = function getShortenText(text) {
+		var wordsArray = text.split(" ");
+		if (wordsArray.length > accessWordCountMax)
+			wordsArray = wordsArray.slice(0, accessWordCountMax);
+		return wordsArray.join(" ");
+	}
+
+	var removeListener = spKBCategoryService.addListener(function(catId) {
+		c.data.category = catId;
+		c.data.items = null;
+		c.server.update().then(function(){
+			init();
+		});
+	});
+	
+	function focusTitle(){
+		$timeout(function() {
+			var kbCategoryTitle = $element.find('.panel-title');
+			if (kbCategoryTitle[0])  
+				kbCategoryTitle[0].focus();
+			spKBCategoryService.setCategorySelected(false);
+		}, 500);
+	}
+	
+	function init() {
+		$timeout(function() {
+			$rootScope.$broadcast('sp.update.breadcrumbs', c.data.breadcrumbs);
+		});
+	}		
+	$scope.hideItemWidget = !$scope.data.category;
+	$scope.showCategories =  function() {
+		$scope.hideItemWidget = true;
+		$rootScope.$broadcast("$sp.kb.show.categories_widget");
+	}
+	$scope.$on('$destroy', function(){
+		removeListener();
+	});
+
+	$scope.loadMore = function () {
+		var focusableIndex = c.data.limit;
+		c.data.new_limit = c.data.limit + (parseInt(c.options.limit_article) || 10);
+		c.server.update().then(function(){
+			$scope.focusOnKbArticle(focusableIndex);
+		});
+	}
+
+	$scope.focusOnKbArticle = function(index) {
+		$timeout(function(){
+			var kbArticles = $element.find(".sp-kb-topic-article a");
+			if (kbArticles[index]) kbArticles[index].focus();
+		});
+	};
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.btn-loadmore {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .kb-star-on {
+      color: $fav-star-color !important;
+      text-shadow: $fav-star-outline;
+    }
+
+    .kb-star-off {
+      color: $fav-star-color-off !important;
+      text-shadow: $fav-star-outline;
+    }
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>color</field_list>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Copy of KB Category Page</name>
+        <option_schema>[{"name":"show_star_rating","default_value":"Use system properties","section":"Presentation","label":"Show star rating","type":"choice","choices":[{"label":"Yes","value":"Yes"},{"label":"No","value":"No"},{"label":"Use system properties","value":"Use system properties"}]},{"hint":"Number of articles to display per page","name":"limit_article","section":"other","default_value":"10","label":"Number of articles to display per page","type":"integer"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[// populate the 'data' variable
+if (input)
+	data.category = input.category;
+else
+	data.category = $sp.getParameter("kb_category");
+
+var kbIds = $sp.getKnowledgeBases();
+var kbs = kbIds.split(',');
+data.kmSearchOrder = gs.getProperty("glide.service_portal.honor.knowman.search.order", "false");
+data.KbArticlesSortBy = gs.getProperty("glide.knowman.order.search", "relevancy");
+
+data.limit = parseInt(options.limit_article) || 10;
+
+if (input && input.new_limit)
+    data.limit = input.new_limit;
+
+var kb_cat = new GlideRecord("kb_category");
+data.categoryDisplay = gs.getMessage("Select a category");
+data.items = [];
+data.categoryExists = false;
+if (kb_cat.get(data.category)) {
+  data.categoryExists = true;
+  data.categoryDisplay = kb_cat.getDisplayValue();
+  data.items = getKBCategoryArticleSummaries();
+}
+
+var diff = data.items.length - data.limit;
+if (diff <= 0)
+    data.showMore = false;
+else {
+	data.items.splice(data.limit);
+	data.showMore = true;
+}
+data.show_msg = gs.getMessage("Showing {0} items", data.limit + "");
+
+var kbId = $sp.getParameter('kb_id');
+
+data.kbId = kbId;
+
+if (kbId) {
+	var gr = new GlideRecord("kb_knowledge_base");
+	if (gr.get(kbId))
+		data.kbName = gr.getDisplayValue("title");
+}
+
+data.kb_knowledge_page = $sp.getDisplayValue("kb_knowledge_page") || "kb_view";
+
+data.breadcrumbs = [{label: data.categoryDisplay, url: '#'}];
+if (kb_cat.parent_id) {
+    var rec = kb_cat.parent_id.getRefRecord();
+    while (rec.getRecordClassName() == "kb_category") {
+        if (kbId)
+            data.breadcrumbs.unshift({label: rec.getDisplayValue(), url: '?id=kb_category&kb_category=' + rec.getUniqueValue() + '&kb_id='+ kbId});
+        else
+            data.breadcrumbs.unshift({label: rec.getDisplayValue(), url: '?id=kb_category&kb_category=' + rec.getUniqueValue()});
+        rec = rec.parent_id.getRefRecord();
+    }
+}
+
+if (kbs && kbs.length > 1) {
+	if (kbId)
+		data.breadcrumbs.unshift({label: data.kbName, url: '?id=' + data.kb_knowledge_page + '&kb_id='+ kbId});
+	data.breadcrumbs.unshift({label: gs.getMessage("All Knowledge Bases"), url: '?id=' + data.kb_knowledge_page});
+} else
+	data.breadcrumbs.unshift({label: gs.getMessage("Knowledge Base"), url: '?id=' + data.kb_knowledge_page});
+
+data.showStarRating = showStarRating();
+
+function getKBCategoryArticleSummaries() {
+    var kbSortObj = {
+        "views": "sys_view_count",
+        "relevancy": "relevancy",
+        "sys_updated_on": "sys_updated_on"
+    };
+    var kbFields = "sys_view_count,author,rating,sys_updated_on,sys_id";
+    var obj = {
+        keyword: '',
+        start: '0',
+        end: data.limit + 1,
+        language: '',
+        variables: {
+            'kb_category': [data.category],
+            'kb_knowledge_base': kbs
+        },
+        knowledge_fields: kbFields,
+        social_fields: '',
+        category_as_tree: true,
+        attachment: false,
+        resources: '',
+        order_desc: true
+    };
+
+    if (data.kmSearchOrder)
+        obj.order = kbSortObj[data["KbArticlesSortBy"]] + ',' + obj.order_desc;
+
+    var resultDataList = (new KBPortalServiceImpl().getResultData(obj)).results || [];
+    var kbFieldsList = kbFields.split(',');
+    if (resultDataList.length > 0) {
+        resultDataList.map(function(resultData) {
+            if (resultData.meta) {
+                for (var i = 0; i < kbFieldsList.length; i++)
+                    resultData[kbFieldsList[i]] = resultData.meta[kbFieldsList[i]] ? resultData.meta[kbFieldsList[i]].display_value : '';
+            }
+            if (resultData.snippet)
+                resultData.text = resultData.snippet;
+
+        });
+    }
+    return resultDataList;
+}
+
+function showStarRating() {
+	if (options.show_star_rating == "Yes")
+		return true;
+
+	if (options.show_star_rating == "No")
+		return false;
+
+	// check gating property for all rating options
+	if (gs.getProperty("glide.knowman.show_rating_options", "true") != "true")
+		return false;
+
+	// does user have the right role?
+	if (!gs.hasRole(gs.getProperty("glide.knowman.show_rating_options.roles")))
+		return false;
+
+	// check specific property for stars
+	if (gs.getProperty("glide.knowman.show_star_rating", "true") != "true")
+		return false;
+
+	// does user have the right role?
+	return gs.hasRole(gs.getProperty("glide.knowman.show_star_rating.roles"));
+}]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 12:50:54</sys_created_on>
+        <sys_id>617451d6c306e2509d5afeac050131c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of KB Category Page</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sp_widget_617451d6c306e2509d5afeac050131c2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 12:50:54</sys_updated_on>
+        <template><![CDATA[<div ng-class="{'hidden-xs' : hideItemWidget}">
+  <a href="javascript:void(0);" ng-click="showCategories()" class="visible-xs-inline-block m-b-sm pointer" aria-label="${All Categories}">
+     <i class="fa fa-chevron-left flip-icon-rtl m-r-xs"></i> ${All Categories}
+  </a>
+  <div ng-if="data.categoryExists" class="panel panel-{{::options.color}} b" role="region" aria-label="${Knowledge base article results}">
+    <div class="panel-heading">
+      <h2 class="panel-title" tabindex="-1">{{data.categoryDisplay}}</h2>
+    </div>
+
+    <div role="list" class="panel-body">
+      <div ng-if="data.items.length == 0">
+        (${No articles})
+      </div>
+      <div role="listitem" ng-repeat="kb_article in data.items" class="sp-kb-topic-article m-b-lg">
+          <a ng-href="{{kb_article.link}}">{{::kb_article.title}}</a>
+        <div style="max-height: 3em; overflow: hidden; padding-top:4px;" aria-label="{{::c.getShortenText(kb_article.text)}}">{{::kb_article.text}}</div>
+        <div class="kb-about" style="padding-top:4px;">
+          <span class="about-outer-span">
+            <span class="author pad-right" ng-if="kb_article.author">
+              <glyph sn-char="user" class="pad-right" aria-hidden="true"></glyph>
+              ${Authored by {{::kb_article.author}}}
+            </span>
+            <span ng-if="kb_article.meta.sys_view_count.value == 1" class="views pad-right">
+              <span class="pad-right">&#8226;</span> <glyph sn-char="eye-open" class="pad-right"></glyph>
+              ${{{::kb_article.sys_view_count}} View}
+            </span>
+            <span ng-if="kb_article.meta.sys_view_count.value > 1" class="views pad-right">
+              <span class="pad-right">&#8226;</span> <glyph sn-char="eye-open" class="pad-right"></glyph>
+              ${{{::kb_article.sys_view_count}} Views}
+            </span>
+            <span class="published pad-right">
+              <span class="pad-right" aria-hidden="true">&#8226;</span> <glyph sn-char="calendar" class="pad-right" aria-hidden="true"></glyph>
+              <sn-time-ago timestamp="kb_article.meta.sys_updated_on.value" label="kb_article.meta.sys_updated_on.label"></sn-time-ago>
+            </span>
+            <span ng-if="data.showStarRating && kb_article.meta.rating.value">
+              <span class="pad-right">&#8226;</span>
+              <span class="sr-only">Article rating - {{::kb_article.rating}}</span>
+              <uib-rating sp-rating ng-model="::kb_article.meta.rating.value" max="5" readonly="true" aria-hidden="true" state-on="'fa fa-star kb-star-on'" state-off="'fa fa-star kb-star-off'"></uib-rating>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div ng-if="data.showMore">
+    <div class="text-a-c">
+       {{data.show_msg}}
+    </div>
+    <button class="m-t-xs btn btn-default btn-loadmore" ng-click="loadMore()">
+        ${Show More}
+    </button>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sp_widget_617451d6c306e2509d5afeac050131c2</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;kb&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function ($scope, $element, $rootScope, $timeout, spKBCategoryService) {
+	var accessWordCountMax = 15;
+	var c = this;
+	init();
+	
+	if (spKBCategoryService.isCategorySelected())
+		focusTitle();
+	
+	c.getShortenText = function getShortenText(text) {
+		var wordsArray = text.split(" ");
+		if (wordsArray.length &gt; accessWordCountMax)
+			wordsArray = wordsArray.slice(0, accessWordCountMax);
+		return wordsArray.join(" ");
+	}
+
+	var removeListener = spKBCategoryService.addListener(function(catId) {
+		c.data.category = catId;
+		c.data.items = null;
+		c.server.update().then(function(){
+			init();
+		});
+	});
+	
+	function focusTitle(){
+		$timeout(function() {
+			var kbCategoryTitle = $element.find('.panel-title');
+			if (kbCategoryTitle[0])  
+				kbCategoryTitle[0].focus();
+			spKBCategoryService.setCategorySelected(false);
+		}, 500);
+	}
+	
+	function init() {
+		$timeout(function() {
+			$rootScope.$broadcast('sp.update.breadcrumbs', c.data.breadcrumbs);
+		});
+	}		
+	$scope.hideItemWidget = !$scope.data.category;
+	$scope.showCategories =  function() {
+		$scope.hideItemWidget = true;
+		$rootScope.$broadcast("$sp.kb.show.categories_widget");
+	}
+	$scope.$on('$destroy', function(){
+		removeListener();
+	});
+
+	$scope.loadMore = function () {
+		var focusableIndex = c.data.limit;
+		c.data.new_limit = c.data.limit + (parseInt(c.options.limit_article) || 10);
+		c.server.update().then(function(){
+			$scope.focusOnKbArticle(focusableIndex);
+		});
+	}
+
+	$scope.focusOnKbArticle = function(index) {
+		$timeout(function(){
+			var kbArticles = $element.find(".sp-kb-topic-article a");
+			if (kbArticles[index]) kbArticles[index].focus();
+		});
+	};
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.btn-loadmore {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .kb-star-on {
+      color: $fav-star-color !important;
+      text-shadow: $fav-star-outline;
+    }
+
+    .kb-star-off {
+      color: $fav-star-color-off !important;
+      text-shadow: $fav-star-outline;
+    }
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list&gt;color&lt;/field_list&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id/&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Copy of KB Category Page&lt;/name&gt;&lt;option_schema&gt;[{"name":"show_star_rating","default_value":"Use system properties","section":"Presentation","label":"Show star rating","type":"choice","choices":[{"label":"Yes","value":"Yes"},{"label":"No","value":"No"},{"label":"Use system properties","value":"Use system properties"}]},{"hint":"Number of articles to display per page","name":"limit_article","section":"other","default_value":"10","label":"Number of articles to display per page","type":"integer"}]&lt;/option_schema&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[// populate the 'data' variable
+if (input)
+	data.category = input.category;
+else
+	data.category = $sp.getParameter("kb_category");
+
+var kbIds = $sp.getKnowledgeBases();
+var kbs = kbIds.split(',');
+data.kmSearchOrder = gs.getProperty("glide.service_portal.honor.knowman.search.order", "false");
+data.KbArticlesSortBy = gs.getProperty("glide.knowman.order.search", "relevancy");
+
+data.limit = parseInt(options.limit_article) || 10;
+
+if (input &amp;&amp; input.new_limit)
+    data.limit = input.new_limit;
+
+var kb_cat = new GlideRecord("kb_category");
+data.categoryDisplay = gs.getMessage("Select a category");
+data.items = [];
+data.categoryExists = false;
+if (kb_cat.get(data.category)) {
+  data.categoryExists = true;
+  data.categoryDisplay = kb_cat.getDisplayValue();
+  data.items = getKBCategoryArticleSummaries();
+}
+
+var diff = data.items.length - data.limit;
+if (diff &lt;= 0)
+    data.showMore = false;
+else {
+	data.items.splice(data.limit);
+	data.showMore = true;
+}
+data.show_msg = gs.getMessage("Showing {0} items", data.limit + "");
+
+var kbId = $sp.getParameter('kb_id');
+
+data.kbId = kbId;
+
+if (kbId) {
+	var gr = new GlideRecord("kb_knowledge_base");
+	if (gr.get(kbId))
+		data.kbName = gr.getDisplayValue("title");
+}
+
+data.kb_knowledge_page = $sp.getDisplayValue("kb_knowledge_page") || "kb_view";
+
+data.breadcrumbs = [{label: data.categoryDisplay, url: '#'}];
+if (kb_cat.parent_id) {
+    var rec = kb_cat.parent_id.getRefRecord();
+    while (rec.getRecordClassName() == "kb_category") {
+        if (kbId)
+            data.breadcrumbs.unshift({label: rec.getDisplayValue(), url: '?id=kb_category&amp;kb_category=' + rec.getUniqueValue() + '&amp;kb_id='+ kbId});
+        else
+            data.breadcrumbs.unshift({label: rec.getDisplayValue(), url: '?id=kb_category&amp;kb_category=' + rec.getUniqueValue()});
+        rec = rec.parent_id.getRefRecord();
+    }
+}
+
+if (kbs &amp;&amp; kbs.length &gt; 1) {
+	if (kbId)
+		data.breadcrumbs.unshift({label: data.kbName, url: '?id=' + data.kb_knowledge_page + '&amp;kb_id='+ kbId});
+	data.breadcrumbs.unshift({label: gs.getMessage("All Knowledge Bases"), url: '?id=' + data.kb_knowledge_page});
+} else
+	data.breadcrumbs.unshift({label: gs.getMessage("Knowledge Base"), url: '?id=' + data.kb_knowledge_page});
+
+data.showStarRating = showStarRating();
+
+function getKBCategoryArticleSummaries() {
+    var kbSortObj = {
+        "views": "sys_view_count",
+        "relevancy": "relevancy",
+        "sys_updated_on": "sys_updated_on"
+    };
+    var kbFields = "sys_view_count,author,rating,sys_updated_on,sys_id";
+    var obj = {
+        keyword: '',
+        start: '0',
+        end: data.limit + 1,
+        language: '',
+        variables: {
+            'kb_category': [data.category],
+            'kb_knowledge_base': kbs
+        },
+        knowledge_fields: kbFields,
+        social_fields: '',
+        category_as_tree: true,
+        attachment: false,
+        resources: '',
+        order_desc: true
+    };
+
+    if (data.kmSearchOrder)
+        obj.order = kbSortObj[data["KbArticlesSortBy"]] + ',' + obj.order_desc;
+
+    var resultDataList = (new KBPortalServiceImpl().getResultData(obj)).results || [];
+    var kbFieldsList = kbFields.split(',');
+    if (resultDataList.length &gt; 0) {
+        resultDataList.map(function(resultData) {
+            if (resultData.meta) {
+                for (var i = 0; i &lt; kbFieldsList.length; i++)
+                    resultData[kbFieldsList[i]] = resultData.meta[kbFieldsList[i]] ? resultData.meta[kbFieldsList[i]].display_value : '';
+            }
+            if (resultData.snippet)
+                resultData.text = resultData.snippet;
+
+        });
+    }
+    return resultDataList;
+}
+
+function showStarRating() {
+	if (options.show_star_rating == "Yes")
+		return true;
+
+	if (options.show_star_rating == "No")
+		return false;
+
+	// check gating property for all rating options
+	if (gs.getProperty("glide.knowman.show_rating_options", "true") != "true")
+		return false;
+
+	// does user have the right role?
+	if (!gs.hasRole(gs.getProperty("glide.knowman.show_rating_options.roles")))
+		return false;
+
+	// check specific property for stars
+	if (gs.getProperty("glide.knowman.show_star_rating", "true") != "true")
+		return false;
+
+	// does user have the right role?
+	return gs.hasRole(gs.getProperty("glide.knowman.show_star_rating.roles"));
+}]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-06-12 12:50:54&lt;/sys_created_on&gt;&lt;sys_id&gt;617451d6c306e2509d5afeac050131c2&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Copy of KB Category Page&lt;/sys_name&gt;&lt;sys_package display_value="Easy to get" source="x_1770592_easy_t_0"&gt;73143024c37522109d5afeac0501313f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Easy to get"&gt;73143024c37522109d5afeac0501313f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_617451d6c306e2509d5afeac050131c2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-06-12 12:50:54&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div ng-class="{'hidden-xs' : hideItemWidget}"&gt;
+  &lt;a href="javascript:void(0);" ng-click="showCategories()" class="visible-xs-inline-block m-b-sm pointer" aria-label="${All Categories}"&gt;
+     &lt;i class="fa fa-chevron-left flip-icon-rtl m-r-xs"&gt;&lt;/i&gt; ${All Categories}
+  &lt;/a&gt;
+  &lt;div ng-if="data.categoryExists" class="panel panel-{{::options.color}} b" role="region" aria-label="${Knowledge base article results}"&gt;
+    &lt;div class="panel-heading"&gt;
+      &lt;h2 class="panel-title" tabindex="-1"&gt;{{data.categoryDisplay}}&lt;/h2&gt;
+    &lt;/div&gt;
+
+    &lt;div role="list" class="panel-body"&gt;
+      &lt;div ng-if="data.items.length == 0"&gt;
+        (${No articles})
+      &lt;/div&gt;
+      &lt;div role="listitem" ng-repeat="kb_article in data.items" class="sp-kb-topic-article m-b-lg"&gt;
+          &lt;a ng-href="{{kb_article.link}}"&gt;{{::kb_article.title}}&lt;/a&gt;
+        &lt;div style="max-height: 3em; overflow: hidden; padding-top:4px;" aria-label="{{::c.getShortenText(kb_article.text)}}"&gt;{{::kb_article.text}}&lt;/div&gt;
+        &lt;div class="kb-about" style="padding-top:4px;"&gt;
+          &lt;span class="about-outer-span"&gt;
+            &lt;span class="author pad-right" ng-if="kb_article.author"&gt;
+              &lt;glyph sn-char="user" class="pad-right" aria-hidden="true"&gt;&lt;/glyph&gt;
+              ${Authored by {{::kb_article.author}}}
+            &lt;/span&gt;
+            &lt;span ng-if="kb_article.meta.sys_view_count.value == 1" class="views pad-right"&gt;
+              &lt;span class="pad-right"&gt;&amp;#8226;&lt;/span&gt; &lt;glyph sn-char="eye-open" class="pad-right"&gt;&lt;/glyph&gt;
+              ${{{::kb_article.sys_view_count}} View}
+            &lt;/span&gt;
+            &lt;span ng-if="kb_article.meta.sys_view_count.value &gt; 1" class="views pad-right"&gt;
+              &lt;span class="pad-right"&gt;&amp;#8226;&lt;/span&gt; &lt;glyph sn-char="eye-open" class="pad-right"&gt;&lt;/glyph&gt;
+              ${{{::kb_article.sys_view_count}} Views}
+            &lt;/span&gt;
+            &lt;span class="published pad-right"&gt;
+              &lt;span class="pad-right" aria-hidden="true"&gt;&amp;#8226;&lt;/span&gt; &lt;glyph sn-char="calendar" class="pad-right" aria-hidden="true"&gt;&lt;/glyph&gt;
+              &lt;sn-time-ago timestamp="kb_article.meta.sys_updated_on.value" label="kb_article.meta.sys_updated_on.label"&gt;&lt;/sn-time-ago&gt;
+            &lt;/span&gt;
+            &lt;span ng-if="data.showStarRating &amp;&amp; kb_article.meta.rating.value"&gt;
+              &lt;span class="pad-right"&gt;&amp;#8226;&lt;/span&gt;
+              &lt;span class="sr-only"&gt;Article rating - {{::kb_article.rating}}&lt;/span&gt;
+              &lt;uib-rating sp-rating ng-model="::kb_article.meta.rating.value" max="5" readonly="true" aria-hidden="true" state-on="'fa fa-star kb-star-on'" state-off="'fa fa-star kb-star-off'"&gt;&lt;/uib-rating&gt;
+            &lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div ng-if="data.showMore"&gt;
+    &lt;div class="text-a-c"&gt;
+       {{data.show_msg}}
+    &lt;/div&gt;
+    &lt;button class="m-t-xs btn btn-default btn-loadmore" ng-click="loadMore()"&gt;
+        ${Show More}
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-748479729</payload_hash>
+        <record_name>Copy of KB Category Page</record_name>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 12:50:54</sys_created_on>
+        <sys_id>657451d6c306e2509d5afeac050131c4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19764317ed00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 12:50:54</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>697451d67c06e25045f6d0f53cf2e3c3</update_guid>
+        <update_guid_history>697451d67c06e25045f6d0f53cf2e3c3:-748479729</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Copy of KB Category Page">20a9919ec306e2509d5afeac0501312f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 13:13:31</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>acda1439572e46619664bb1a8f7564a1</sys_id>
+        <sys_metadata>617451d6c306e2509d5afeac050131c2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of KB Category Page</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sp_widget_617451d6c306e2509d5afeac050131c2</sys_update_name>
+        <sys_update_version display_value="sp_widget_617451d6c306e2509d5afeac050131c2">657451d6c306e2509d5afeac050131c4</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 13:13:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

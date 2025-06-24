@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>false</active>
+        <api_name>x_1770592_easy_t_0.ResubmitHandler</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>ResubmitHandler</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[var ResubmitHandler = Class.create();
+ResubmitHandler.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    
+    processResubmit: function() {
+        // 获取传入的系统ID
+        var sysId = this.getParameter('sysparm_sysid');
+        if (!sysId) {
+            return "无效请求: 缺少记录ID";
+        }
+        
+        // 获取当前记录
+        var gr = new GlideRecord('x_1770592_easy_t_0_my_asset_request');
+        if (!gr.get(sysId)) {
+            return "未找到记录: " + sysId;
+        }
+        
+        try {
+            // 记录审计日志
+            gs.info("处理重新提交请求: 记录ID=" + sysId + 
+                    ", 当前状态=" + gr.getValue('my_request_status') + 
+                    ", 系统状态=" + gr.getValue('state') +
+					 ", 系统状态=" + gr.getValue('stage') +
+                    ", 重新提交允许标志=" + gr.getValue('u_resubmit_allowed'));
+            
+            // 验证记录状态是否符合重新提交条件
+            var currentStatus = gr.getValue('my_request_status');
+            var resubmitAllowed = gr.getValue('u_resubmit_allowed');
+            
+            // 检查状态和重新提交标志
+            if (currentStatus != 'rejected') {
+                return "错误: 只有被拒绝的记录可以重新提交。当前状态: " + currentStatus;
+            }
+            
+            if (!(resubmitAllowed == 'true' || resubmitAllowed == true)) {
+                return "错误: 重新提交功能已被禁用";
+            }
+            
+            // 关键修改：同时更新业务状态和系统状态
+            gr.setWorkflow(true);  // 启用工作流引擎
+            
+            // 更新业务状态
+            gr.setValue('my_request_status', 'submitted');  // 使用正确的业务状态值
+            
+            // 更新系统状态 - 这是关键修改，确保进入审批流程
+            gr.setValue('state', 1);  // 使用系统识别的待审批状态值
+            gr.setValue('stage', 'Requested');  // 使用系统识别的待审批状态值
+            // 清除拒绝原因
+            gr.setValue('reject_reason', '');
+            
+            // 禁用重新提交功能
+            gr.setValue('u_resubmit_allowed', false);
+            
+            // 清除"不再需要"标志(如果有)
+            if (gr.isValidField('u_no_longer_required')) {
+                gr.setValue('u_no_longer_required', 'false');
+            }
+            
+            // 执行更新
+            if (gr.update()) {
+                gs.info("记录成功重新提交: " + sysId);
+                
+                // 显式触发工作流
+                //this._triggerWorkflow(gr);
+						//var inputs = {};
+		//inputs['current'] = gr; // GlideRecord of table:  
+		//inputs['table_name'] = 'x_1770592_easy_t_0_my_asset_request';
+
+		// Start Asynchronously: Uncomment to run in background.
+		// sn_fd.FlowAPI.getRunner().flow('x_1770592_easy_t_0.demo33').inBackground().withInputs(inputs).run();
+				
+		// Execute Synchronously: Run in foreground.
+		//sn_fd.FlowAPI.getRunner().flow('x_1770592_easy_t_0.demo33').inForeground().withInputs(inputs).run();
+                
+                return "success";
+            } else {
+                var errorMsg = "更新失败: 可能是权限问题或数据约束";
+                gs.error(errorMsg + " - 记录ID: " + sysId);
+                return errorMsg;
+            }
+            
+        } catch (e) {
+            // 异常处理
+            var errorMsg = "服务器错误: " + e.message;
+            gs.error("重新提交请求时出错: " + e.message + "\n堆栈: " + e.stack);
+            return errorMsg;
+        }
+    },
+    
+    // 确保工作流被正确触发
+    _triggerWorkflow: function(gr) {
+        try {
+            // 获取工作流API
+            var wf = new Workflow();
+            
+            // 检查是否已有活动的工作流
+            var context = wf.getContext(gr.getTableName(), gr.sys_id);
+            
+            if (!context.isActive()) {
+                // 启动新的工作流
+                wf.startFlow(gr.getTableName(), gr, 'update');
+                gs.info("手动触发工作流: " + gr.sys_id);
+            } else {
+                // 如果已有工作流，确保它被唤醒
+                wf.wakeUp(gr);
+                gs.info("唤醒现有工作流: " + gr.sys_id);
+            }
+        } catch (wfErr) {
+            gs.error("触发工作流失败: " + wfErr.message);
+        }
+    },
+    
+    type: 'ResubmitHandler'
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-11 09:41:15</sys_created_on>
+        <sys_id>e30f5bf9c38662509d5afeac050131e8</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>ResubmitHandler</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sys_script_include_e30f5bf9c38662509d5afeac050131e8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-16 15:15:26</sys_updated_on>
+    </sys_script_include>
+</record_update>
