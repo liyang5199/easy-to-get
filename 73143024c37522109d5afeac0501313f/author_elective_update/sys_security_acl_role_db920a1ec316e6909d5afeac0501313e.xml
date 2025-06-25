@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-25 02:28:15</sys_created_on>
+        <sys_id>db920a1ec316e6909d5afeac0501313e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1770592_easy_t_0_my_asset_inventory.x_1770592_easy_t_0.fullfiller_admin</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_security_acl display_value="x_1770592_easy_t_0_my_asset_inventory">4f92c21ec316e6909d5afeac0501314a</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_db920a1ec316e6909d5afeac0501313e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-25 02:28:15</sys_updated_on>
+        <sys_user_role display_value="x_1770592_easy_t_0.fullfiller_admin" name="x_1770592_easy_t_0.fullfiller_admin">15718e9ac316e6909d5afeac050131ff</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sys_security_acl_role_db920a1ec316e6909d5afeac0501313e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-25 02:28:15</sys_created_on><sys_id>db920a1ec316e6909d5afeac0501313e</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1770592_easy_t_0_my_asset_inventory.x_1770592_easy_t_0.fullfiller_admin</sys_name><sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package><sys_policy/><sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope><sys_security_acl display_value="x_1770592_easy_t_0_my_asset_inventory">4f92c21ec316e6909d5afeac0501314a</sys_security_acl><sys_update_name>sys_security_acl_role_db920a1ec316e6909d5afeac0501313e</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-25 02:28:15</sys_updated_on><sys_user_role display_value="x_1770592_easy_t_0.fullfiller_admin" name="x_1770592_easy_t_0.fullfiller_admin">15718e9ac316e6909d5afeac050131ff</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-984776902</payload_hash>
+        <record_name>x_1770592_easy_t_0_my_asset_inventory.x_1770592_easy_t_0.fullfiller_admin</record_name>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-25 02:28:15</sys_created_on>
+        <sys_id>53920a1ec316e6909d5afeac05013142</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197a4ea1af20000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-25 02:28:15</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>57920a1e0516e690bfecdf9abcdeeb41</update_guid>
+        <update_guid_history>57920a1e0516e690bfecdf9abcdeeb41:-984776902</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_1770592_easy_t_0_my_asset_inventory.x_1770592_easy_t_0.fullfiller_admin">8ab40edec316e6909d5afeac05013154</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-25 02:37:26</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>3260be2363b6426c9e76464c0918db41</sys_id>
+        <sys_metadata>db920a1ec316e6909d5afeac0501313e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1770592_easy_t_0_my_asset_inventory.x_1770592_easy_t_0.fullfiller_admin</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent display_value="x_1770592_easy_t_0_my_asset_inventory">4f92c21ec316e6909d5afeac0501314a</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_db920a1ec316e6909d5afeac0501313e</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_db920a1ec316e6909d5afeac0501313e">53920a1ec316e6909d5afeac05013142</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-25 02:37:26</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

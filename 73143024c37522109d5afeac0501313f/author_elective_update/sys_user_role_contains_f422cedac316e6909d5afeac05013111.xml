@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="DELETE">
+        <contains display_value="canvas_user" name="canvas_user">8536f54bc713330072b211d4d8c26080</contains>
+        <role display_value="x_1770592_easy_t_0.Fullfiller_admin" name="x_1770592_easy_t_0.Fullfiller_admin">15718e9ac316e6909d5afeac050131ff</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-25 02:26:09</sys_created_on>
+        <sys_id>f422cedac316e6909d5afeac05013111</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>canvas_user.x_1770592_easy_t_0.Fullfiller_admin</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_update_name>sys_user_role_contains_f422cedac316e6909d5afeac05013111</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-25 02:26:09</sys_updated_on>
+    </sys_user_role_contains>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Easy to get">73143024c37522109d5afeac0501313f</application>
+        <file_path/>
+        <instance_id>f28f7819dbc6f1d039639027c596198c</instance_id>
+        <instance_name>dev192634</instance_name>
+        <name>sys_user_role_contains_f422cedac316e6909d5afeac05013111</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains"><sys_user_role_contains action="INSERT_OR_UPDATE"><contains display_value="canvas_user" name="canvas_user">8536f54bc713330072b211d4d8c26080</contains><role display_value="x_1770592_easy_t_0.Fullfiller_admin" name="x_1770592_easy_t_0.Fullfiller_admin">15718e9ac316e6909d5afeac050131ff</role><sys_class_name>sys_user_role_contains</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-25 02:26:09</sys_created_on><sys_id>f422cedac316e6909d5afeac05013111</sys_id><sys_mod_count>0</sys_mod_count><sys_name>canvas_user.x_1770592_easy_t_0.Fullfiller_admin</sys_name><sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package><sys_policy/><sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope><sys_update_name>sys_user_role_contains_f422cedac316e6909d5afeac05013111</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-25 02:26:09</sys_updated_on></sys_user_role_contains></record_update>]]></payload>
+        <payload_hash>856776263</payload_hash>
+        <record_name>canvas_user.x_1770592_easy_t_0.Fullfiller_admin</record_name>
+        <reverted_from/>
+        <source>6e04a13cc37d62109d5afeac05013167</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-25 02:26:09</sys_created_on>
+        <sys_id>fc22cedac316e6909d5afeac050131dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197a4e830d90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-25 02:26:09</sys_updated_on>
+        <type>Contained Role</type>
+        <update_guid>f022ceda7516e6904e4f2faee4f93fdd</update_guid>
+        <update_guid_history>f022ceda7516e6904e4f2faee4f93fdd:856776263</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-25 02:28:13</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role_contains">sys_user_role_contains</sys_db_object>
+        <sys_id>1833708fd8ab42c88376242735a422f9</sys_id>
+        <sys_metadata>f422cedac316e6909d5afeac05013111</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>canvas_user.x_1770592_easy_t_0.Fullfiller_admin</sys_name>
+        <sys_package display_value="Easy to get" source="x_1770592_easy_t_0">73143024c37522109d5afeac0501313f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Easy to get">73143024c37522109d5afeac0501313f</sys_scope>
+        <sys_scope_delete display_value="">8ef22a4cead94a4cae98b059a0fcd810</sys_scope_delete>
+        <sys_update_name>sys_user_role_contains_f422cedac316e6909d5afeac05013111</sys_update_name>
+        <sys_update_version display_value="sys_user_role_contains_f422cedac316e6909d5afeac05013111">fc22cedac316e6909d5afeac050131dd</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-25 02:28:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
